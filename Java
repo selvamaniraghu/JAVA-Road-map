@@ -4,24 +4,6 @@ Core Java Concepts
 	# Inheritance, Polymorphism, Abstraction, Encapsulation
 	# Interface vs Abstract class
 
-Inheritance
-	* Inheritance is one of the core concepts of Object-Oriented Programming (OOP).
-	* It allows a class (child/subclass) to inherit fields and methods from another class (parent/superclass).
-
-	This helps in:
-		- Code reusability (no need to rewrite existing logic)
-		- Extensibility (add or override behavior)
-		- Maintainability (common behavior in one place)
-
-	Syntax:
-	class Parent {
-    	// parent class members
-	}
-
-	class Child extends Parent {
-	    // child class members
-	}
-
 2. Data Types & Variables
 	# Primitive vs Non-Primitive
 	# Wrapper classes, type casting
@@ -46,4 +28,3 @@ Inheritance
 	# Streams API
 	# Functional interfaces (Predicate, Function, Consumer)
 	# Optional, Method References
-
