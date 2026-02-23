@@ -1,0 +1,48 @@
+Core Java Concepts
+
+1. OOP Principles
+	# Inheritance, Polymorphism, Abstraction, Encapsulation
+	# Interface vs Abstract class
+
+Inheritance
+	* Inheritance is one of the core concepts of Object-Oriented Programming (OOP).
+	* It allows a class (child/subclass) to inherit fields and methods from another class (parent/superclass).
+
+	This helps in:
+		- Code reusability (no need to rewrite existing logic)
+		- Extensibility (add or override behavior)
+		- Maintainability (common behavior in one place)
+
+	Syntax:
+	class Parent {
+    	// parent class members
+	}
+
+	class Child extends Parent {
+	    // child class members
+	}
+
+2. Data Types & Variables
+	# Primitive vs Non-Primitive
+	# Wrapper classes, type casting
+
+3. Control Flow & Loops
+
+4. Collections Framework
+	# List, Set, Map (ArrayList vs LinkedList, HashSet vs TreeSet, HashMap vs LinkedHashMap vs TreeMap)
+	# Iterators, Comparator vs Comparable
+
+5. Exception Handling
+	# Checked vs Unchecked
+	# try-catch-finally, throw vs throws
+
+6. Multithreading & Concurrency
+	# Thread class, Runnable, ExecutorService
+	# synchronized, volatile, wait/notify
+	# Race condition, deadlock
+
+7. Java 8+ Features
+	# Lambda expressions
+	# Streams API
+	# Functional interfaces (Predicate, Function, Consumer)
+	# Optional, Method References
