@@ -65,16 +65,6 @@ Abstraction
 	    }
 	}
 
-	=> Key Differences: Abstract Class vs Interface
-
-	| Feature     | Abstract Class                            | Interface                                        |
-	| ----------- | ----------------------------------------- | ------------------------------------------------ |
-	| Keyword     | `abstract class`                          | `interface`                                      |
-	| Methods     | Can have both abstract & concrete methods | Abstract by default (default/static from Java 8) |
-	| Variables   | Can have instance variables               | Variables are `public static final` by default   |
-	| Inheritance | Supports single inheritance               | Supports multiple inheritance                    |
-	| Use Case    | Common base with shared code              | Define contract for implementation               |
-
 	=> Benefits of Abstraction
 	- Hides complex implementation details
 	- Promotes loose coupling between components
