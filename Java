@@ -28,3 +28,11 @@ Core Java Concepts
 	# Streams API
 	# Functional interfaces (Predicate, Function, Consumer)
 	# Optional, Method References
+
+
+JPA
+Hibernate
+Microservicce
+Java Keyword
+Annotations
+transient

@@ -59,7 +59,7 @@ Inheritance
 
 	=> Key Points
 	1. Constructors are not inherited, but the parent constructor is automatically called (via super()).
-	2. You can override parent methods in the child class to provide a specific implementation.
+	2. We can override parent methods in the child class to provide a specific implementation.
 	3. Access modifiers affect what is inherited:
 		private → not inherited
 		protected, public → inherited
@@ -214,7 +214,8 @@ Inheritance
 		This allowed Java to add new functionality to existing interfaces without breaking the classes that implement them.
 
 	=> The Problem: Multiple Inheritance Conflict
-		If a class implements two interfaces that both define a default method with the same signature, the compiler gets confused — it doesn’t know which one to use.
+		If a class implements two interfaces that both define a default method with the same signature, 
+		the compiler gets confused — it doesn’t know which one to use.
 		That’s the diamond problem reappearing through interfaces.
 
 	Example

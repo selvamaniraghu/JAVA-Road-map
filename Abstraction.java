@@ -1,12 +1,13 @@
 Abstraction
 
 	- Abstraction is the process of hiding implementation details and showing only the essential features of an object.
-	- In simple terms: You focus on what an object does, not how it does it.
+	
+	- In simple terms: We focus on what an object does, not how it does it.
 
 	=> Real-World Analogy
 		Think of a car:
-			- You use the steering wheel, accelerator, and brakes (what it does)
-			- You don’t see the internal engine or fuel combustion process (how it works)
+			- We use the steering wheel, accelerator, and brakes (what it does)
+			- We don’t see the internal engine or fuel combustion process (how it works)
 		That’s abstraction in action.
 
 	=> How Abstraction is Achieved in Java	

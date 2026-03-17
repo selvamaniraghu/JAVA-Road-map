@@ -1,16 +1,12 @@
 Interface vs Abstract class
 
-	* Abstract Class
+	Summary
 
-		- A class declared using the abstract keyword
-		- Represents an “is-a” relationship
-		- Used when classes share common behavior + structure
-
-	* Interface
-
-		- A blueprint of a class declared using the interface keyword
-		- Represents a contract
-		- Used when multiple unrelated classes must follow the same behavior
+		“An abstract class is used when we want to share common code and state among related classes. It can have both abstract and concrete methods, 
+		instance variables, and constructors, but it supports only single inheritance.
+		An interface is used to define a contract. It supports multiple inheritance and promotes loose coupling. Interfaces cannot hold state, 
+		but since Java 8 they can have default and static methods.
+		In practice, we use abstract classes for base implementations and interfaces for defining behavior across unrelated classes.”
 
 	=> Key Differences: Abstract Class vs Interface
 
@@ -20,10 +16,9 @@ Interface vs Abstract class
 	| Methods     		| Can have both abstract & concrete methods | Abstract by default (default/static from Java 8) |
 	| Variables   		| Can have instance variables               | Variables are `public static final` by default   |
 	| Inheritance 		| Supports single inheritance               | Supports multiple inheritance                    |
-	| Use Case    		| Common base with shared code              | Define contract for implementation               |
 	| Constructors		| Yes							            | No  							                   |
 	| Access Modifiers	| Any (private, protected, public)			| Methods are public by default					   |
-	| Use Case      	| Base class with shared code    			| Define rules/contract							   |
+	| Use Case      	| Base class with shared code    			| Define contract for implementation			   |
 
 	=> Abstract Class Example
 	abstract class Vehicle {
@@ -42,6 +37,16 @@ Interface vs Abstract class
 	    }
 	}
 
+	public class Test {
+	    public static void main(String[] args) {
+
+	        Vehicle v;     // abstract class reference
+	        v = new Car(); // object of child class
+
+	        v.start();
+	    }
+	}
+
 	✔ Can have variables
 	✔ Can have implemented methods
 	✔ Can have constructor
@@ -49,7 +54,10 @@ Interface vs Abstract class
 	=> Interface Example
 
 	interface Payment {
-	    int MAX_LIMIT = 10000; // public static final by default
+	    int MAX_LIMIT = 10000; // public static final by default (public static final int MAX_LIMIT = 10000;)
+	    // public → accessible everywhere
+		// static → belongs to the interface, not to objects
+		// final → value cannot be changed (constant)
 
 	    void pay(double amount); // public abstract by default
 
@@ -64,27 +72,69 @@ Interface vs Abstract class
 	    }
 	}
 
+	class CreditCard implements Payment {
+	    public void pay(double amount) {
+	        System.out.println("Paid ₹" + amount + " using Credit Card");
+	    }
+	}
+
+	// loose coupling example
+	// The Main class only depends on the interface Payment, not on UPI or CreditCard.
+	public class Main {
+	    public static void main(String[] args) {
+
+	        Payment p; // interface reference
+
+	        p = new UPI(); // object of implementing class
+	        p.pay(1000);
+
+	        p = new CreditCard();
+	        p.pay(2000);
+	    }
+	}
+
 	✔ Supports multiple inheritance
 	✔ Cannot store object state
 	✔ Used for loose coupling
+
+	//state
+	State means variables that store data.
+
+	// loose coupling
+	Loose coupling means reducing the dependency between classes. 
+	When using an interface, the main program depends on the interface, not on a specific class implementation. 
+	This allows you to change implementations without changing the main code.
+
+	// static method example
+	interface Payment {
+	    static void rules() {
+	        System.out.println("Follow payment rules");
+	    }
+	}
+	- You must call it using the interface name.
+	- Payment.rules();
+	- You cannot call it using an object.
+
+	//contract
+	Any class using Payment must provide a pay() method. otherwise throw error (UPI is not abstract and does not override abstract method pay(double))
 
 	=> When to Use What?
 
 	Use Abstract Class when:
 
-		- You want to share code among related classes
-		- You need constructors
-		- You want to maintain state
-		- You expect subclasses to be closely related
+		- We want to share code among related classes
+		- We need constructors
+		- We want to maintain state
+		- We expect subclasses to be closely related
 
 	Use Interface when:
 
-		- You want to define a contract
+		- We want to define a contract
 		- Multiple classes need the same behavior
-		- You need multiple inheritance
-		- You want loose coupling (e.g., APIs, services)
+		- We need multiple inheritance
+		- We want loose coupling (e.g., APIs, services)
 		- Classes are unrelated
-		- You want support for lambda expressions (functional interfaces)
+		- We want support for lambda expressions (functional interfaces)
 
 	=> Java 8+ Special Points (Often Asked)
 
@@ -94,14 +144,6 @@ Interface vs Abstract class
 	| Static Methods       | Yes          	 |  Yes                       |
 	| Functional Interface | No              |  (Single abstract method)  |
 	| Lambda Support       | No              | Yes                        |
-
-	Summary
-
-	“An abstract class is used when we want to share common code and state among related classes. It can have both abstract and concrete methods, 
-	instance variables, and constructors, but it supports only single inheritance.
-	An interface is used to define a contract. It supports multiple inheritance and promotes loose coupling. Interfaces cannot hold state, 
-	but since Java 8 they can have default and static methods.
-	In practice, we use abstract classes for base implementations and interfaces for defining behavior across unrelated classes.”
 
 
 	Common Interview Trap Questions
@@ -171,7 +213,7 @@ Notes:
 => Real-World Scenario-Based Questions
 
 1. Payment System Design
-	* You are designing a payment system with UPI, Credit Card, and Net Banking. Which would you use — interface or abstract class?
+	* We are designing a payment system with UPI, Credit Card, and Net Banking. Which would you use — interface or abstract class?
 
 	Interface. Because,
 		- Payment methods are unrelated implementations

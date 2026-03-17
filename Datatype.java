@@ -74,47 +74,12 @@ Example:
 	“A data type in Java defines the type of data a variable can hold, how much memory is allocated, and what operations can be performed. 
 	Java has primitive data types for simple values like int and boolean, and non-primitive data types like String, arrays, and objects for complex data.”
 
-
-=> Primitive vs Non-Primitive
-
-	Basic Definition
-
-		Primitive Data Types
-		
-		- Store simple values
-		- Hold the actual data
-		- Fixed memory size
-
-		Example: byte, short, int, long, float, double, char, boolean
-
-		Non-Primitive (Reference) Data Types
-
-		- Store references (memory address) of objects
-		- Can store complex data
-		- Size is not fixed
-
-		Example: String, Arrays, Classes, Interfaces, Enums
-
 => Key Differences (Most Important Table)
 
 	| Feature       | Primitive                | Non-Primitive               |
 	| ------------- | ------------------------ | --------------------------- |
-	| Stores        | Actual value             | Reference to object         |
-	| Memory size   | Fixed                    | Dynamic                     |
-	| Null allowed  | ❌ No                    | ✅ Yes                      |
 	| Default value | `0`, `false`, `'\u0000'` | `null`                      |
-	| Methods       | ❌ No                    | ✅ Yes                      |
-	| Performance   | Faster                   | Slightly slower             |
 	| Stored in     | Stack (usually)          | Heap (objects)              |
-	| Examples      | `int`, `double`, `char`  | `String`, `Array`, `Object` |
-
-	Example:
-
-		int x = 10;          // primitive
-		String name = "Tony"; // non-primitive
-
-	- x stores value 10
-	- name stores a reference to a String object
 
 	=> Memory Understanding (Interview Favorite)
 

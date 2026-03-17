@@ -1,7 +1,11 @@
 Polymorphism
 
 	- Polymorphism means “many forms.” In Java, polymorphism allows the same method to behave differently depending on the object that invokes it.
-	It helps achieve: Flexibility, Code reusability, Runtime dynamic behavior
+	
+	It helps achieve: 
+		- Flexibility, 
+		- Code reusability, 
+		- Runtime dynamic behavior
 
 	| Type                      | What it is                           | Achieved by        | When decided |
 	| ------------------------- | ------------------------------------ | ------------------ | ------------ |
