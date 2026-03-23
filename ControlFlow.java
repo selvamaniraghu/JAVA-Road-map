@@ -2,9 +2,9 @@ Control Flow
 
 => What is Control Flow in Java?
 
-	* Control flow determines the order in which the program executes statements or blocks of code.
-
-	In simple terms: Control flow controls which code runs and when it runs.
+	Control flow in Java determines the order in which statements execute. 
+	It includes decision-making statements like if and switch, looping statements like for, while, and do-while, 
+	and branching statements like break, continue, and return that alter the normal execution flow.	
 
 	=> Types of Control Flow in Java
 
@@ -150,18 +150,3 @@ Control Flow
 					* Exits from a method.
 
 						return value;
-
-			=> Summary 
-
-			| Category        | Statements                    |
-			| --------------- | ----------------------------- |
-			| Decision Making | `if`, `if-else`, `switch`     |
-			| Looping         | `for`, `while`, `do-while`    |
-			| Branching       | `break`, `continue`, `return` |
-
-			
-			Short Notes:
-
-			Control flow in Java determines the order in which statements execute. 
-			It includes decision-making statements like if and switch, looping statements like for, while, and do-while, 
-			and branching statements like break, continue, and return that alter the normal execution flow.	

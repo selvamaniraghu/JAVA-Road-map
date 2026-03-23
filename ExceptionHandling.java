@@ -2,8 +2,6 @@ Exception Handling
 
 	* Exception handling is a mechanism used to handle runtime errors so that the program can continue execution without crashing.
 
-	In simple terms: Exception handling allows you to catch and manage errors gracefully during program execution.
-
 	Example Without Exception Handling: 
 
 		int a = 10;

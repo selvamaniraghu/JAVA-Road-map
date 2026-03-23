@@ -4,8 +4,6 @@ Collections Framework
 
 	* The Java Collections Framework is a set of classes and interfaces used to store, manage, and manipulate groups of objects dynamically.
 
-	In simple words: It provides ready-made data structures and algorithms to work with collections of objects.
-
 	It is part of the java.util package.
 
 => Why Collections Framework is Needed
@@ -70,9 +68,6 @@ Collections Framework
 					list.add("Apple");
 
 					System.out.println(list);
-
-					✔ Maintains order
-					✔ Allows duplicates
 
 		=> ArrayList vs LinkedList
 
@@ -158,17 +153,6 @@ Collections Framework
 				- LinkedHashMap
 				- TreeMap
 				- Hashtable
-
-				Example:
-
-					Map<Integer, String> map = new HashMap<>();
-
-					map.put(1, "Tony");
-					map.put(2, "John");
-
-					System.out.println(map.get(1));
-
-					✔ Keys must be unique
 
 		=> HashMap vs LinkedHashMap vs TreeMap
 		
@@ -362,13 +346,6 @@ Iterators
 	| Remove elements | Yes       	| No        	     |
 	| Modern API      | Yes       	| Legacy	         |
 	| Used with       | Collections | Vector, Hashtable |
-
-=> Short Notes:
-
-	An Iterator in Java is used to traverse elements of a collection sequentially. 
-	It provides methods like hasNext(), next(), and remove() to safely access and modify elements during iteration. 
-	Java provides Iterator, ListIterator, and Enumeration for different traversal needs.
-
 
 Comparable vs Comparator in Java
 

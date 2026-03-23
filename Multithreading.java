@@ -2,8 +2,6 @@ Multithreading
 
 	* Multithreading means executing multiple threads (small units of a process) simultaneously within a program.
 
-	In simple terms: Multithreading allows a program to perform multiple tasks at the same time.
-
 	Example: 
 
 		- Downloading a file while playing music
@@ -63,43 +61,11 @@ Multithreading
 
 				✔ Preferred because Java supports single inheritance
 
-		=> Thread Lifecycle
-
-			* A thread goes through different states.
-
-			New → Runnable → Running → Waiting → Terminated
-
-			| State      | Meaning              |
-			| ---------- | -------------------- |
-			| New        | Thread created       |
-			| Runnable   | Ready to run         |
-			| Running    | Executing            |
-			| Waiting    | Waiting for resource |
-			| Terminated | Execution finished   |
-
-		=> Important Thread Methods
-
-			| Method    | Purpose                      |
-			| --------- | ---------------------------- |
-			| `start()` | Start thread                 |
-			| `run()`   | Thread logic                 |
-			| `sleep()` | Pause thread                 |
-			| `join()`  | Wait for thread to finish    |
-			| `yield()` | Give chance to other threads |
-
-			Example:
-
-				Thread.sleep(1000);
-
-				- Pauses thread for 1 second.
-
 	=> What is the Thread Class in Java?
 
 		* The Thread class in Java is used to create and control threads in a program.			
 
 		It is part of the java.lang package.
-
-		In simple terms: A Thread class represents a separate path of execution within a program.
 
 	=> Why Use Threads?
 
@@ -209,8 +175,6 @@ Multithreading
 	=> What is Runnable in Java?
 
 		* Runnable is an interface in Java used to create a thread. It belongs to the java.lang package.
-
-		- In simple terms: Runnable provides a way to define the task that a thread will execute.
 
 		- Instead of extending Thread, we implement Runnable and pass it to a Thread object.
 

@@ -4,8 +4,6 @@ Concurrency
 
 		* Concurrency means managing multiple tasks at the same time, even if they are not running simultaneously.
 
-		Example: A CPU switching between multiple tasks quickly.
-
 	=> Multithreading vs Concurrency
 
 		| Feature | Multithreading             | Concurrency             |
