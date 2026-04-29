@@ -1,0 +1,911 @@
+Short notes
+
+============================================================================================================================================
+JAVA
+============================================================================================================================================
+1. Inheritance
+
+	* Inheritance is one of the core concepts of Object-Oriented Programming (OOP).
+	* It allows a class (child/subclass) to inherit fields and methods from another class (parent/superclass).
+
+		This helps in:
+		- Code reusability (no need to rewrite existing logic)
+		- Extensibility (add or override behavior)
+		- Maintainability (common behavior in one place)
+
+	=> Types of Inheritance in Java
+	
+	| Type             | Description                                                                                                     | Example          |
+	| ---------------- | --------------------------------------------------------------------------------------------------------------- | ---------------- |
+	| Single       	   | One class inherits another                                                                                      | `A -> B`         |
+	| Multilevel       | A class is derived from another derived class                                                                   | `A -> B -> C`    |
+	| Hierarchical     | Multiple classes inherit the same parent                                                                        | `A -> B, A -> C` |
+	| Multiple         | Java does not support multiple inheritance with classes (to avoid ambiguity). But it’s possible via interfaces. |                  |
+
+2. Polymorphism
+
+	- Polymorphism means “many forms.” In Java, polymorphism allows the same method to behave differently depending on the object that invokes it.
+		There are two types: compile-time polymorphism through method overloading, and runtime polymorphism through method overriding.
+		In runtime polymorphism, a parent reference can refer to a child object, and the overridden method of the child class is executed, determined at runtime.
+		This makes the code more flexible, reusable, and easier to maintain. It helps achieve dynamic behavior.
+
+3. Abstraction
+
+	- Abstraction is the process of hiding implementation details and showing only the essential features of an object.
+		It is achieved using abstract classes and interfaces.
+		Abstract classes can have both abstract and concrete methods, while interfaces define only the contract.
+		Abstraction helps reduce complexity, improve maintainability, and promote a cleaner design.
+		For example, a car class hides how the engine works — we just call start().”
+
+4. Encapsulation
+
+	- Encapsulation in Java means hiding data by making fields private and exposing them through public getters and setters. 
+	This ensures controlled access, data security, and allows validation before modifying values. 
+	It helps make the code modular and maintainable. 
+
+5. Interface vs Abstract class
+
+		“An abstract class is used when we want to share common code and state among related classes. It can have both abstract and concrete methods, 
+		instance variables, and constructors, but it supports only single inheritance.
+		An interface is used to define a contract. It supports multiple inheritance and promotes loose coupling. Interfaces cannot hold state, 
+		but since Java 8 they can have default and static methods.
+		In practice, we use abstract classes for base implementations and interfaces for defining behavior across unrelated classes.”
+
+6. Datatype
+
+		“A data type in Java defines the type of data a variable can hold, how much memory is allocated, and what operations can be performed. 
+	“Primitive data types store simple values directly and have fixed size, while non-primitive data types store references 
+	to objects and can hold complex data. Primitives are faster and cannot be null, whereas non-primitives support methods, dynamic size, 
+	and can be null.”
+
+7. 	What are Wrapper Classes in Java?
+
+		* Wrapper classes are classes that convert primitive data types into objects.
+
+8. Autoboxing and Unboxing
+
+	Autoboxing - Automatic conversion of primitive → wrapper
+	Unboxing - Automatic conversion of wrapper → primitive
+
+9. What is Type Casting in Java?
+
+	* Type casting in Java is the process of converting one data type to another. 
+	It is of two types: implicit casting, also called widening, where a smaller data type is automatically converted to a larger type, 
+	and explicit casting, also called narrowing, where a larger data type is manually converted to a smaller type and may cause data loss.
+
+10. Control Flow
+
+	Control flow in Java determines the order in which statements execute. 
+	It includes decision-making statements like if and switch, looping statements like for, while, and do-while, 
+	and branching statements like break, continue, and return that alter the normal execution flow.	
+
+11. Collections Framework
+
+		* The Java Collections Framework is a set of classes and interfaces used to store, manage, and manipulate groups of objects dynamically.
+
+		List stores ordered elements and allows duplicates, with common implementations like ArrayList and LinkedList. 
+		Set stores unique elements and includes implementations like HashSet and TreeSet. 
+		Map stores key-value pairs with unique keys, implemented by classes like HashMap, LinkedHashMap, and TreeMap. 
+		HashMap provides fast access, LinkedHashMap maintains insertion order, and TreeMap stores elements in sorted order.		
+
+12. Iterators
+
+		* An Iterator is an object used to iterate through elements of a collection one by one.
+
+		It is helps to read and remove elements from a collection safely.
+
+		Types of Iterators
+
+		* Java provides three main iterators:
+
+		| Iterator       | Used For             | Direction          |
+		| -------------- | -------------------- | ------------------ |
+		| `Iterator`     | All collections      | Forward only       |
+		| `ListIterator` | List implementations | Forward & backward |
+		| `Enumeration`  | Legacy classes       | Forward only       |
+
+13. Comparable vs Comparator in Java
+
+	* Both Comparable and Comparator are used to sort objects in Java.
+
+		The key difference:
+
+			Comparable → defines natural sorting inside the class by implementing the compareTo() method. 
+			Comparator → defines custom sorting outside the class using the compare() method. 
+
+		Comparable allows only one sorting logic, while Comparator supports multiple sorting strategies.
+
+14. Exception Handling
+
+    * Exception handling in Java is a mechanism used to handle runtime errors so that the program continues execution normally. 
+	* It uses try, catch, finally, throw, and throws keywords to manage exceptions. 
+	* The try block contains code that may cause an exception, the catch block handles the exception, and the finally block executes regardless of whether an exception occurs. 
+	* The throw keyword is used to manually throw an exception inside a method, 
+	* while throws is used in the method signature to declare that a method may throw certain exceptions.	
+	* Java exceptions are classified into checked exceptions, and unchecked exceptions
+	* Checked exceptions are checked at compile time and must be handled using try-catch or throws. They usually represent external issues such as file or database errors. 
+	* Unchecked exceptions occur at runtime due to programming mistakes like null pointer access or division by zero, 
+	and the compiler does not require them to be handled.
+
+15. Multithreading
+
+	* Multithreading in Java allows multiple threads to run concurrently within a program to improve performance and responsiveness. 
+	Threads can be created by extending the Thread class or implementing the Runnable interface. 
+	Java provides synchronization mechanisms to ensure thread safety when multiple threads access shared resources. 
+	For efficient thread management, Java offers the Executor framework and thread pools.
+
+16. Concurrency
+
+	* Concurrency means managing multiple tasks at the same time, even if they are not running simultaneously.
+
+17. What is a Thread Class?
+
+	* The Thread class in Java is used to create and manage threads, enabling concurrent execution of tasks. 
+	A thread can be created by extending the Thread class and overriding the run() method. 
+	The start() method begins thread execution and internally calls run(). 
+	Java also provides methods like sleep(), join(), and yield() to control thread behavior.
+
+18. What is Runnable in Java?
+
+	* Runnable is a functional interface in Java used to define a task that can be executed by a thread. 
+	It contains a single method run(), which holds the thread logic. 
+	A Runnable object is passed to a Thread object, and the thread is started using the start() method. 
+	Runnable is preferred over extending Thread because it allows better flexibility and supports multiple inheritance.
+
+19.  What is ExecutorService in Java?
+
+	* ExecutorService is a Java concurrency framework used to manage thread pools and execute asynchronous tasks efficiently. 
+	Instead of creating threads manually, tasks are submitted to an ExecutorService, which manages thread allocation and execution. 
+	It improves performance by reusing threads and provides methods like submit(), execute(), shutdown(), and invokeAll() for task management.
+
+20. What is synchronized in Java?
+
+	* The synchronized keyword in Java is used to control access to shared resources in multithreaded environments. 
+	It ensures that only one thread can execute a synchronized method or block at a time, preventing race conditions and ensuring thread safety. 
+	Synchronization can be applied to methods, blocks, or static methods.
+
+21. What is volatile in Java?
+
+	* The volatile keyword in Java ensures that a variable’s value is always read from main memory rather than a thread’s local cache, 
+	guaranteeing visibility of changes across threads. However, volatile does not ensure atomicity or mutual exclusion, 
+	so it is typically used for simple shared variables like flags or status indicators.
+
+22. What are wait() and notify() in Java?
+
+	* The wait() and notify() methods in Java are used for inter-thread communication. 
+	The wait() method causes a thread to release the object lock and enter a waiting state until another thread calls notify() or notifyAll(). 
+	The notify() method wakes up one waiting thread, while notifyAll() wakes up all waiting threads. 
+	These methods must be used inside synchronized blocks.
+
+23. Race condition
+
+	* A race condition occurs when multiple threads access and modify shared data concurrently, and the final result depends on the order of execution. 
+	It leads to unpredictable or incorrect results. 
+	Race conditions can be prevented using synchronization mechanisms such as synchronized blocks, locks, or atomic variables.
+
+24. What is Deadlock in Java?
+
+	Deadlock is a situation in multithreading where two or more threads are blocked forever waiting for each other to release resources. 
+	It usually occurs when threads locks in different orders, creating circular dependency. 
+	Deadlocks can be avoided by maintaining consistent lock order, minimizing nested locks, or using timeout-based locking mechanisms.
+
+25. Lambda expressions
+
+	- Lambda expressions in Java provide a Short way to implement functional interfaces using anonymous functions. 
+	In Java 8, It is reduce boilerplate code and improve readability. It is widely used with collections, streams, 
+	and functional interfaces such as Predicate, Function, and Consumer.
+
+26. What is Stream API in Java?
+
+	* The Stream API is used to process collections of data in a functional and efficient way. 
+	It allows operations like filtering, mapping, and sorting using lambda expressions. 
+	Streams consist of intermediate operations that transform data and terminal operations that produce results. 
+	They improve code readability and support parallel processing.
+
+27. What is a Functional Interface?
+
+	- Functional interfaces in Java contain exactly one abstract method and are used with lambda expressions. 
+	The Predicate interface is used for testing conditions and returns a boolean. 
+	The Function interface is used to transform data from one type to another. 
+	The Consumer interface performs operations on data without returning a value.
+
+28. What is Optional in Java?
+
+	- Optional is a container object introduced in Java 8 that may contain a value or be empty. 
+	It helps prevent NullPointerException by forcing developers to explicitly handle missing values. 
+	Optional provides methods like orElse(), ifPresent(), and map() to safely operate on values.
+
+29.  What is a Method Reference?
+
+	- A method reference is a short way to refer to a method without executing it using the :: operator. 
+	It is allow to use an existing method instead of writing a lambda expression.. 
+	Method references improve readability and are commonly used with functional interfaces and the Stream API.
+
+30. What is JPA?
+
+	- JPA (Java Persistence API) is a Java specification used to manage relational data using object-relational mapping. 
+	It allows Java objects to be mapped to database tables using annotations. JPA itself is not an implementation; 
+	frameworks like Hibernate implement it. In Spring Boot, JPA simplifies database operations by using repositories and entity classes.
+
+31. What is Hibernate?
+
+	- Hibernate is an ORM (Object Relational Mapping) framework that simplifies database operations by mapping Java objects to database tables. 
+	It is writing SQL queries manually and provides features like automatic table mapping, caching, and transaction management. 
+	Hibernate is also the most widely used implementation of the JPA specification.
+
+32. What are Microservices?
+
+	- Microservices architecture is a design approach where an application is divided into small, independent services that communicate through APIs. 
+	Each service is responsible for a specific business function and can be developed, deployed, and scaled independently. 
+	In Java, microservices are commonly built using Spring Boot and Spring Cloud.
+
+33. What are Java Keywords?
+
+	- Java keywords are reserved words that have predefined meanings in the Java language and cannot be used as identifiers like variable or class names. 
+	They are used to define structure, control flow, and object-oriented features in Java programs. 
+	Examples include class, public, static, final, and if.
+
+34. What is transient in Java?
+
+	- The transient keyword in Java is used to prevent a variable from being serialized when an object is converted into a byte stream. 
+	It is typically used for sensitive or temporary data like passwords. 
+	When an object is deserialized, transient variables receive their default values.
+
+35. What is Serialization?
+
+	* Serialization is the process of converting a Java object into a byte stream so it can be:
+
+		- Stored in a file
+		- Sent over a network
+		- Saved in a database
+
+		Example: ObjectOutputStream.writeObject(object);
+
+36. What are Annotations in Java?
+
+	- Annotations in Java are metadata that provide additional information about the program to the compiler or runtime environment. 
+	They are used for configuration, code analysis, and framework integration. 
+	Common examples include @Override, @Deprecated, and framework-specific annotations like @RestController and @Entity.
+
+	Types of Annotations	
+
+		1. Built-in Annotations - Provided by Java.
+		2. Custom Annotations - Developers can create their own annotations.
+		3. Meta Annotations - Annotations that define behavior of other annotations.
+
+============================================================================================================================================
+SQL
+============================================================================================================================================
+
+1. What is a Database?
+
+	A database is an organized collection of structured data stored electronically that allows efficient storage, retrieval, modification, and management of data using a database management system.
+
+2. What is MySQL?
+
+	MySQL is an open-source Relational Database Management System (RDBMS) used to store, manage, and retrieve structured data using SQL (Structured Query Language).
+
+3. RDBMS vs DBMS
+	
+	DBMS is a system used to store and manage data, while RDBMS is an advanced form of DBMS that stores data in related tables and maintains relationships using keys like primary key and foreign key
+
+	| Feature         | DBMS             | RDBMS              |
+	| --------------- | ---------------- | ------------------ |
+	| Structure       | File-based       | Table-based        |
+	| Relationship    | No relationships | Tables are related |
+	| Data Redundancy | Higher           | Reduced            |
+	| Users           | Single user      | Multiple users     |
+	| Data Integrity  | Low              | High               |
+	| Normalization   | Not supported    | Supported          |
+	| Examples        | dBase, FoxPro    | MySQL, Oracle      |
+
+4. Tables, Rows, Columns
+
+	=> Table
+
+		A table is a structure in a database used to store data in an organized format.
+
+		It consists of rows and columns, similar to an Excel sheet.
+
+		Each table represents a specific entity.
+
+	=> Row (Record / Tuple)
+
+		A row represents a single record in a table.
+
+		Each row contains complete information about one entity.
+
+	=> Column (Field / Attribute)
+
+		A column represents a specific attribute or property of the data.
+
+		Each column stores one type of information for all rows.
+
+5. Primary Key
+
+	- A Primary Key is a column (or combination of columns) in a table that uniquely identifies each row (record) in that table.
+
+	- It ensures that no two rows have the same value in the primary key column.
+
+6. Foreign Key
+
+	- A foreign key is a field in a table that refers to the primary key of another table to establish a relationship between them.
+
+	- It is used to create a relationship between two tables and maintain data integrity.
+
+7. Unique Key
+
+	- A Unique Key is a constraint used to ensure that all values in a column are unique.
+
+	- It prevents duplicate values in the column but allows NULL values (depending on the database configuration).
+
+8. Null vs Not Null
+
+	- NULL represents a missing or unknown value in a column, while NOT NULL is a constraint that ensures a column must always contain a value.
+
+9. Default values
+
+	- A Default Value is a value that is automatically assigned to a column when no value is provided during insertion.
+
+	- It helps ensure that a column always has a predefined value if the user does not specify one.
+
+10. GROUP BY & HAVING
+
+	- Both GROUP BY and HAVING are used with aggregate functions like COUNT(), SUM(), AVG(), etc.
+
+		# GROUP BY → groups rows with the same values.
+		# HAVING → filters grouped results.
+
+	1. GROUP BY
+
+		- GROUP BY is used to group rows that have the same values in a column.
+
+		- It is commonly used with aggregate functions.
+
+	2. HAVING
+
+		- HAVING is used to filter the grouped results.
+
+		- It works after GROUP BY.
+
+11. JOINS
+
+	- JOIN is used to combine rows from two or more tables based on a related column between them
+
+	- Joins are used when data is stored in multiple tables but needs to be retrieved together.
+
+		Type of joins
+
+			1. INNER JOIN (INNER JOIN returns only the matching records from both tables.)
+			2. LEFT JOIN (LEFT OUTER JOIN)
+				(LEFT JOIN returns all rows from the left table and matching rows from the right table. If there is no match, NULL is returned.)
+			3. RIGHT JOIN (RIGHT OUTER JOIN) (RIGHT JOIN returns all rows from the right table and matching rows from the left table.)
+			4. FULL JOIN (Concept)
+
+12. Difference between INNER JOIN vs LEFT JOIN?
+
+	Both INNER JOIN and LEFT JOIN are used to combine data from multiple tables, but they return different results depending on matching records.
+
+13. Subqueries
+
+	- A subquery is a query written inside another SQL query. The inner query executes first and its result is used by the outer query.
+
+		Types of subqueries
+
+			1. Single Row Subquery (Returns one value)
+			2. Multiple Row Subquery (Returns multiple values)
+			3. Subquery with EXISTS (Checks if records exist)
+			4. Correlated Subquery (A subquery that depends on the outer query. It runs once for each row of the outer query.)
+
+		Advantages of Subqueries
+
+			- Simplifies complex queries
+			- Improves readability
+			- Helps compare values from another query
+			- Useful with IN, EXISTS, ANY, ALL
+
+14. Find the second highest salary
+
+	SELECT MAX(salary)
+	FROM employees
+	WHERE salary < (
+	    SELECT MAX(salary)
+	    FROM employees
+	);
+
+15. Indexing
+
+	- An index is a database structure that improves the speed of data retrieval by allowing MySQL to locate rows quickly without scanning the entire table.
+
+		Types of Indexes in MySQL
+
+			1. Primary Index (Automatically created when a Primary Key is defined.)
+			2. Unique Index (Ensures all values are unique.)
+			3. Single Column Index (Index created on one column.)
+			4. Composite Index (Index created on multiple columns.)
+
+		=> When NOT to Use Index
+
+			- Table is very small
+			- Column has many duplicate values
+			- Column is rarely used in queries
+
+16. Difference between Clustered Index and Non-Clustered Index
+
+	| Clustered Index                 | Non-Clustered Index    |
+	| ------------------------------- | ---------------------- |
+	| Data stored physically in order | Separate structure     |
+	| Only one per table              | Multiple allowed       |
+	| Usually Primary Key             | Used for other columns |
+
+
+17. Constraints
+
+	i. Constraints are rules applied to table columns to ensure the accuracy, reliability, and integrity of the data stored in a database.
+	ii. They restrict the type of data that can be inserted into a table.
+
+		Types of Constraints
+
+			1. PRIMARY KEY
+			2. FOREIGN KEY
+			3. UNIQUE
+			4. NOT NULL
+			5. DEFAULT
+			6. CHECK
+
+		Why Constraints Are Important
+
+			- Maintain data integrity
+			- Prevent invalid data
+			- Ensure consistency in the database
+			- Define relationships between tables
+
+18. Normalization
+
+	- Normalization is the process of organizing data in a database to reduce redundancy and improve data integrity.
+
+	- It divides large tables into smaller related tables and defines relationships between them.
+
+		Why Normalization is Important
+
+			- Reduces duplicate data
+			- Improves data consistency
+			- Saves storage space
+			- Makes database maintenance easier
+
+		Types of Normal Forms
+
+			1. First Normal Form (1NF) 
+
+				- Each column should contain atomic (single) values
+				- No repeating groups
+
+			2. Second Normal Form (2NF)
+
+				- Must satisfy 1NF
+				- No partial dependency 
+
+					Meaning: Every non-key column must depend on the entire primary key.
+
+			3. Third Normal Form (3NF)
+
+				- Must satisfy 2NF
+				- No transitive dependency
+
+					Meaning: Non-key columns should depend only on the primary key, not on other columns.
+
+19. What is the difference between 2NF and 3NF?
+
+	- 2NF removes partial dependency
+	- 3NF removes transitive dependency
+
+20. Removing Redundancy in Databases
+
+	Removing redundancy means eliminating duplicate data in a database by dividing large tables into smaller related tables using normalization.
+
+		Too much redundancy can cause:
+
+				- Data inconsistency
+				- More storage usage
+				- Difficult updates
+
+			Normalization is used to remove redundancy.
+
+21. Functional Dependency
+
+	Functional dependency means one attribute uniquely determines another attribute in a table, represented as A → B.
+
+		Types of Functional Dependency
+
+			1. Full Functional Dependency (A column depends on the entire primary key.)
+			2. Partial Dependency (A column depends on only part of a composite key.)
+			3. Transitive Dependency (A column depends on another non-key column.)
+
+22. What is Partial Dependency vs Transitive Dependency?
+
+
+23. Transactions
+
+	A transaction is a sequence of database operations executed as a single unit of work. It ensures data integrity by following ACID properties and uses commands like COMMIT and ROLLBACK.
+
+		Important Transaction Commands
+
+			1. START TRANSACTION (Begins a transaction)
+			2. COMMIT (Saves all changes permanently.)
+			3. ROLLBACK (Undo changes if something goes wrong.)
+			4. SAVEPOINT (Creates a point inside a transaction to roll back partially.)
+
+24. ACID Properties:
+
+	ACID properties are Atomicity, Consistency, Isolation, and Durability. They ensure that database transactions are processed reliably, maintain data integrity, and remain permanent after commit.
+
+			ACID stands for:
+
+				A → Atomicity
+
+				C → Consistency
+
+				I → Isolation
+
+				D → Durability
+
+			These properties are used to make sure transactions are processed safely.
+
+25. Atomicity
+
+	A transaction is treated as a single unit — either all operations are completed or none of them are applied.
+
+26. Consistency
+
+	A transaction takes the database from one valid state to another valid state.
+
+	It ensures that database rules, constraints, and integrity are maintained.
+
+27. Isolation
+
+	- Multiple transactions running at the same time should not interfere with each other.
+
+	- Each transaction should behave as if it is running alone.
+
+28. Durability
+
+	Once a transaction is committed, the changes are permanently saved, even if the system crashes.
+
+29. Stored Procedures
+
+	A stored procedure is a set of SQL statements stored in the database that can be executed as a single unit. It improves performance, reusability, and security.
+
+30. Views (Virtual tables)
+
+	A view is a virtual table based on a SQL query that does not store data physically but displays data from one or more tables.
+
+31. Triggers (Automated database events)
+
+	A trigger is a database object that automatically executes a set of SQL statements in response to events like INSERT, UPDATE, or DELETE on a table.
+
+	Types of Triggers
+
+		Triggers are classified based on timing:
+
+		1. BEFORE Trigger (Executes before the event happens.)
+		2. AFTER Trigger (Executes after the event happens.)
+
+32. Performance Optimization
+
+	Performance optimization in MySQL involves improving query speed and efficiency using techniques like indexing, query optimization, proper use of WHERE clauses, avoiding SELECT *, and analyzing queries with EXPLAIN
+
+33. JDBC (Java Database Connectivity)
+
+	JDBC is a Java API used to connect Java applications to a database, execute SQL queries, and process the results.
+
+34. Connection Pooling
+
+	Connection pooling is a technique where a set of database connections is maintained and reused, reducing the overhead of creating new connections and improving performance.
+
+35. ORM (Hibernate / JPA)
+
+	ORM is a technique that maps Java objects to database tables. JPA is a specification for ORM, and Hibernate is its implementation that handles database operations automatically.
+
+36. Transactions in Spring Boot
+
+	- In Spring Boot, transactions are managed using the @Transactional annotation, which ensures that a group of database operations either all succeed (commit) or fail together (rollback), maintaining data consistency.
+
+============================================================================================================================================
+Angular
+============================================================================================================================================
+
+1. What is a component in Angular?
+
+	A component is the core building block of Angular applications. It consists of a TypeScript class for logic, an HTML template for the view, and CSS for styling. Components control a part of the UI and are defined using the @Component decorator.
+
+2. Difference between Component vs Directive
+
+	- A component is a special type of directive that has its own template and is used to build UI, whereas directives are used to modify the behavior or structure of existing DOM elements. Components are used as HTML elements, while directives are applied as attributes.
+
+3. Lifecycle hooks
+
+	- Lifecycle hooks are methods provided by Angular that allow us to tap into different stages of a component’s life, such as creation, initialization, change detection, view rendering, and destruction. Common hooks include ngOnInit for initialization, ngOnChanges for input changes, ngAfterViewInit for accessing the DOM, and ngOnDestroy for cleanup.
+
+4. Angular Architecture
+
+	- Angular follows a component-based architecture where the application is built using components, modules, and services. Components control the UI, services handle business logic and API calls, and modules organize the application. Angular uses dependency injection to manage dependencies and routing for navigation, making it scalable and maintainable.
+
+5. Modules (App Organization)	
+
+	- A module is a container that groups related components, services, and directives to organize the application.
+
+			- Organize application into blocks
+
+			- Root module: AppModule
+
+			- Feature modules for scalability
+
+			Types:
+
+				- Root Module
+
+				- Feature Module
+
+				- Shared Module
+
+				- Core Module
+
+6. Templates (View Layer)
+
+			- A template is an HTML view that displays data and binds it with the component logic.
+
+			- HTML with Angular syntax
+
+			Uses:
+
+				- Interpolation → {{data}}
+
+				- Directives → *ngIf, *ngFor
+
+				- Pipes → | uppercase
+
+7. Services (Business Logic)
+
+	- A service is used to handle business logic, API calls, and share data across components.
+
+	Handle:
+
+		- API calls
+
+		- Data sharing
+
+		- Business logic
+
+6. Dependency Injection (DI)
+
+			- Dependency Injection is a design pattern where Angular provides required dependencies automatically instead of creating them manually.
+
+			- Angular automatically provides dependencies
+
+			Benefits:
+
+				- Loose coupling
+
+				- Reusability
+
+				- Testability
+
+7. Directives
+
+			- A directive is used to modify the behavior or structure of DOM elements.
+
+			- Extend HTML behavior
+
+			Types:
+
+				- Structural → *ngIf, *ngFor
+
+				- Attribute → ngClass, ngStyle
+
+				- Custom Directives - User-defined directives
+
+8. Routing (Navigation)
+
+	Angular Routing is a mechanism that allows navigation between different views/components in a Single Page Application (SPA) without reloading the page.
+
+	Key Concepts
+
+		1. Routes
+		2. RouterModule
+		3. routerLink
+		4. router-outlet
+
+			Supports:
+
+				- Lazy loading - Load modules only when the route is accessed to improve performance.
+
+				- Route guards - Used to control access to routes (e.g., authentication)
+
+8. Pipes (Data Transformation)
+
+			- A pipe is used to transform data in templates, such as formatting dates or text.
+
+			- Transform data in UI
+
+9. Data Binding (Very Important)
+
+	Data binding in Angular is a way to synchronize data between the component and the view. It supports one-way binding like interpolation and property binding, event binding from view to component, and two-way binding using ngModel.
+
+		Types of Data Binding (4 Types)
+
+		| Type             | Example                  |
+		| ---------------- | ------------------------ |
+		| Interpolation    | `{{name}}`               |
+		| Property binding | `[src]="imageUrl"`       |
+		| Event binding    | `(click)="save()"`       |
+		| Two-way binding  | `[(ngModel)]="username"` |
+
+10. What is RxJS?
+
+			- RxJS (Reactive Extensions for JavaScript) is a library used in Angular to handle asynchronous data streams using Observables.
+
+						=> Common RxJS Operators
+
+			- map() → transform data
+			- filter() → filter values
+			- switchMap() → cancel previous request
+			- mergeMap() → run multiple requests
+			- debounceTime() → delay input (search)
+
+11. What is an Observable?
+
+			- An Observable is a stream of data that can emit multiple values over time (like API responses, user input, events).
+
+12. Observable vs Promise
+
+			| Feature   | Observable          	| Promise   |
+			| --------- | ------------------- 	| --------- |
+			| Values    | Multiple            	| Single    |
+			| Cancel    | ✅ Yes               | ❌ No      |
+			| Operators | ✅ Yes (map, filter) | ❌ Limited |
+			| Lazy      | ✅ Yes               | ❌ No      |
+
+13. Angular Form
+
+	Angular forms are used to manage user input and validation. There are two types: template-driven forms, which are simple and defined in HTML, and reactive forms, which are more powerful and defined in TypeScript using FormGroup and FormControl.
+
+		Types of Angular Forms
+
+			1. Template-Driven Forms - Forms are created using HTML template with directives like ngModel.
+			2. Reactive Forms (Most Important) - Forms are defined in TypeScript using FormGroup and FormControl.
+
+14. AOT Compilation in Angular
+
+	AOT (Ahead-of-Time) compilation in Angular compiles templates and components during the build process instead of at runtime. This improves performance, reduces bundle size, and detects errors early before the application runs.
+
+15. What is JIT?
+
+				- Just-In-Time compilation happens at runtime in the browser.
+
+16. Tree Shaking in Angular
+
+	Tree shaking is a build optimization technique that removes unused code from the final bundle. Angular uses it during production builds to reduce bundle size and improve application performance.
+
+17. HTTP Interceptors in Angular
+
+	HTTP Interceptors in Angular are used to intercept and modify HTTP requests and responses globally. They are commonly used for adding authentication tokens, handling errors, and logging API calls.
+
+18. Angular Error Handling
+
+	Angular error handling is used to manage errors at different levels such as HTTP errors using catchError, global errors using ErrorHandler, and interceptor-based error handling for API calls. It helps improve user experience and application stability.
+
+		Types of Error Handling
+
+			1. HTTP Error Handling (Most Common)
+			2. Global Error Handling
+			3. HTTP Interceptor Error Handling
+
+19. Retry in Angular (RxJS)
+
+	Retry is an RxJS operator used to automatically retry a failed observable, such as an HTTP request, a specified number of times before throwing an error.
+
+20. Token injection
+
+	Token injection in Angular is the process of attaching an authentication token, usually a JWT, to HTTP requests using an HTTP interceptor. This ensures secure communication with backend APIs without manually adding tokens to each request.
+
+21. Standalone components
+
+	Standalone components in Angular are components that can work independently without being declared in an NgModule. They simplify application structure, improve lazy loading, and make Angular applications more modular and maintainable.
+
+22. Signals
+
+	Signals in Angular are a reactive state management feature that automatically tracks dependencies and updates the UI when data changes. They provide a simpler and more efficient alternative to traditional change detection and are useful for managing local component state.
+
+23. NgRx / state management
+
+	NgRx is a state management library in Angular based on the Redux pattern. It uses a centralized store to manage application state, with actions to describe events, reducers to update state, effects for side effects like API calls, and selectors to retrieve data.
+
+24. Module Federation
+
+	Module Federation is a Webpack feature used in Angular to build micro frontends by allowing different applications to share and load modules dynamically at runtime. It enables independent deployment and better scalability.
+
+25. Micro frontend
+
+	Micro frontend is an architectural approach where a large frontend application is divided into smaller, independently developed and deployed applications that are combined to form a single user interface.
+
+26. SSR (Angular Universal)
+
+	SSR in Angular is a technique where the application is rendered on the server using Angular Universal and sent as fully rendered HTML to the browser. It improves performance, SEO, and initial load time.
+
+27. What is Angular?
+
+	- Angular is a component-based front-end framework used to build dynamic, scalable, and single-page web applications.
+
+28. Difference between AngularJS and Angular
+
+		- AngularJS is the first version of Angular built with JavaScript and follows MVC architecture, whereas Angular is a complete rewrite using TypeScript with a component-based architecture, better performance, and modern features.
+
+		| Feature              | AngularJS  | Angular             |
+		| -------------------- | ---------- | ------------------- |
+		| Language             | JavaScript | TypeScript          |
+		| Architecture         | MVC        | Component-based     |
+		| Performance          | Slower     | Faster              |
+		| Mobile Support       | Limited    | Strong              |
+		| Data Binding         | Two-way    | One-way (default)   |
+		| Dependency Injection | Basic      | Advanced            |
+		| DOM Handling         | Direct     | Virtual DOM-like    |
+		| Support              | Deprecated | Actively maintained |
+
+29. What is TypeScript?
+
+		- TypeScript is a strongly typed superset of JavaScript developed by Microsoft. It adds static typing and modern features to JavaScript and compiles into plain JavaScript.
+
+30. What is a decorator?
+
+		- A decorator in Angular is a function that adds metadata to classes or their members. It is used by Angular to identify and configure components, services, modules, and other elements.
+
+			@Component → defines a component
+			@NgModule → defines a module
+			@Injectable → defines a service
+			@Input → receive data
+			@Output → send data
+
+31. What is Zone.js?
+
+		- Zone.js is a library used by Angular to intercept asynchronous operations like events, HTTP calls, and timers, and automatically trigger change detection to update the UI.
+
+32. Feature modules
+
+	Feature modules in Angular are used to group related functionality into a separate module, making the application more organized, scalable, and easier to maintain. They can also be lazy-loaded to improve performance.
+
+33. Shared module
+
+	A shared module in Angular is used to group reusable components, directives, and pipes so they can be used across multiple modules, helping reduce code duplication and improve maintainability.
+
+34. Core module
+
+	A core module in Angular is used to store singleton services and global functionality that should be loaded only once in the application. It is typically imported in the root module to ensure a single instance of services.
+
+35. Angular + Spring Boot integration
+
+	Angular and Spring Boot are integrated using REST APIs where Angular acts as the frontend and communicates with the Spring Boot backend using HTTP requests. The backend processes the request and returns JSON responses, which Angular uses to update the UI.
+
+36. JWT authentication
+
+	JWT authentication is a stateless authentication mechanism where the server generates a token after successful login, and the client sends this token in every request for authentication. The server validates the token instead of maintaining session data.
+
+37. API error handling
+
+	API error handling in Angular is done using RxJS operators like catchError to handle HTTP errors, along with interceptors for global error handling. It helps manage errors, show user-friendly messages, and maintain application stability.
+
+38. Performance optimization
+
+	Angular performance optimization involves techniques like using OnPush change detection, trackBy in ngFor, lazy loading modules, AOT compilation, tree shaking, and optimizing API calls using RxJS. These help reduce unnecessary rendering and improve application speed.
+
+		Key Techniques:
+
+			1. Change Detection Optimization
+			2. Use trackBy in *ngFor
+			3. Lazy Loading Modules
+			4. AOT Compilation
+			5. Tree Shaking
+			6. Use Async Pipe
+			7. Optimize API Calls
+			8. Caching
+			9. Minimize DOM Manipulation
+			10. Use Standalone Components

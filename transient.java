@@ -2,9 +2,9 @@ transient
 
 	=> What is transient in Java?
 
-		* transient is a keyword used to indicate that a variable should not be serialized.
-
-		👉 In simple terms: If a variable is marked as transient, its value will not be saved when the object is serialized.
+		- The transient keyword in Java is used to prevent a variable from being serialized when an object is converted into a byte stream. 
+		It is typically used for sensitive or temporary data like passwords. 
+		When an object is deserialized, transient variables receive their default values.
 
 	=> What is Serialization?
 
@@ -104,9 +104,3 @@ transient
 		| Purpose       | Skip serialization | Class-level variable |
 		| Serialization | Not saved          | Not saved            |
 		| Scope         | Object-level       | Class-level          |
-
-	=> Short Notes:
-
-		The transient keyword in Java is used to prevent a variable from being serialized when an object is converted into a byte stream. 
-		It is typically used for sensitive or temporary data like passwords. 
-		When an object is deserialized, transient variables receive their default values.

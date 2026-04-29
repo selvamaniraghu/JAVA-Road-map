@@ -2,9 +2,9 @@ Annotations
 
 	=> What are Annotations in Java?
 
-		* Annotations are metadata added to Java code that provide information to the compiler or runtime.
-
-		👉 In simple terms: Annotations give extra instructions to the compiler or frameworks without changing the program logic.
+		- Annotations in Java are metadata that provide additional information about the program to the compiler or runtime environment. 
+		They are used for configuration, code analysis, and framework integration. 
+		Common examples include @Override, @Deprecated, and framework-specific annotations like @RestController and @Entity.
 
 		They start with `@`.
 
@@ -59,10 +59,10 @@ Annotations
 
 			    @Override
 			    void display() {
-						        System.out.println("Override method");
-						    }
+					System.out.println("Override method");
+				}
 
-						}
+			}
 
 		2. Custom Annotations
 
@@ -148,16 +148,3 @@ Annotations
 			    private String name;
 
 			}
-
-	=> Advantages of Annotations
-
-		✔ Cleaner code
-		✔ Less XML configuration
-		✔ Better integration with frameworks
-		✔ Compile-time checking	
-
-	=> Short Notes:
-
-		Annotations in Java are metadata that provide additional information about the program to the compiler or runtime environment. 
-		They are used for configuration, code analysis, and framework integration. 
-		Common examples include @Override, @Deprecated, and framework-specific annotations like @RestController and @Entity.

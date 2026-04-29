@@ -2,11 +2,9 @@ Hibernate
 
 	=> What is Hibernate?
 
-		* Hibernate is an ORM (Object Relational Mapping) framework for Java.
-
-		👉 In simple terms: Hibernate maps Java objects to database tables automatically, so developers don’t need to write SQL manually.
-
-		It simplifies database operations like CRUD.
+		- Hibernate is an ORM framework that simplifies database operations by mapping Java objects to database tables. 
+		It is writing SQL queries manually and provides features like automatic table mapping, caching, and transaction management. 
+		Hibernate is also the most widely used implementation of the JPA specification.
 
 	=> What is ORM?
 
@@ -53,14 +51,6 @@ Hibernate
 		JDBC
 		     ↓
 		Database
-
-		Main components:
-
-			- Configuration
-			- SessionFactory
-			- Session
-			- Transaction
-			- Query
 
 	=> Important Hibernate Components
 
@@ -147,11 +137,11 @@ Hibernate
 
 	=> Hibernate vs JPA
 
-		| Feature | Hibernate              | JPA                       |
-		| ------- | ---------------------- | ------------------------- |
-		| Type    | ORM framework          | Specification             |
-		| Purpose | Implements ORM         | Defines ORM rules         |
-		| Usage   | Standalone or with JPA | Used with implementations |
+		| Feature 	| Hibernate              | JPA                       |
+		| ------- 	| ---------------------- | ------------------------- |
+		| Type    	| ORM framework          | Specification             |
+		| Purpose 	| Implements ORM         | Defines ORM rules         |
+		| Usage   	| Standalone or with JPA | Used with implementations |
 
 		* Hibernate is the most popular JPA implementation.
 
@@ -162,10 +152,3 @@ Hibernate
 		✔ Built-in caching
 		✔ Automatic table mapping
 		✔ Faster development
-
-	=> Short Notes: 
-
-		Hibernate is an ORM framework that simplifies database operations by mapping Java objects to database tables. 
-		It eliminates the need for writing SQL queries manually and provides features like automatic table mapping, caching, and transaction management. 
-		Hibernate is also the most widely used implementation of the JPA specification.
-

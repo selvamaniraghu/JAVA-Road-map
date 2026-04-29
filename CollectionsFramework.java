@@ -1,199 +1,199 @@
 Collections Framework
 
-=> What is the Collections Framework in Java?
+	=> What is the Collections Framework in Java?
 
-	* The Java Collections Framework is a set of classes and interfaces used to store, manage, and manipulate groups of objects dynamically.
+		* The Java Collections Framework is a set of classes and interfaces used to store, manage, and manipulate groups of objects dynamically.
 
-	It is part of the java.util package.
+		It is part of the java.util package.
 
-=> Why Collections Framework is Needed
+	=> Why Collections Framework is Needed
 
-	Before collections, Java used arrays.
+		Before collections, Java used arrays.
 
-	Problems with arrays:
+		Problems with arrays:
 
-		- Fixed size
-		- No built-in methods
-		- Difficult to manage dynamic data
+			- Fixed size
+			- No built-in methods
+			- Difficult to manage dynamic data
 
-	Collections solve this by providing:
+		Collections solve this by providing:
 
-		- Dynamic resizing
-		- Built-in algorithms
-		- Easy data manipulation
+			- Dynamic resizing
+			- Built-in algorithms
+			- Easy data manipulation
 
-=> Main Components of Collections Framework
+	=> Main Components of Collections Framework
 
-	There are three main parts:	
+		There are three main parts:	
 
-		1. Interfaces
-		2. Classes (Implementations)
-		3. Algorithms (Utility methods)
+			1. Interfaces
+			2. Classes (Implementations)
+			3. Algorithms (Utility methods)
 
-=> Core Collection Interfaces
+	=> Core Collection Interfaces
 
-	Iterable
-	   |
-	Collection
-	   |
-	---------------------------------
-	|        |        |              |
-	List     Set      Queue          Map*
+		Iterable
+		   |
+		Collection
+		   |
+		---------------------------------
+		|        |        |              |
+		List     Set      Queue          Map*
 
-	- Map is not part of Collection, but part of the framework.
+		- Map is not part of Collection, but part of the framework.
 
-	1. List Interface
+		1. List Interface
 
-		* Stores ordered elements and allows duplicates.
+			* Stores ordered elements and allows duplicates.
 
-			Characteristics
+				Characteristics
 
-				- Maintains insertion order
-				- Allows duplicate elements
-				- Elements accessed using index
+					- Maintains insertion order
+					- Allows duplicate elements
+					- Elements accessed using index
 
-			Implementations
+				Implementations
 
-				- ArrayList
-				- LinkedList
-				- Vector
-				- Stack
+					- ArrayList
+					- LinkedList
+					- Vector
+					- Stack
 
-				Example:
+					Example:
 
-					List<String> list = new ArrayList<>();
+						List<String> list = new ArrayList<>();
 
-					list.add("Apple");
-					list.add("Banana");
-					list.add("Apple");
+						list.add("Apple");
+						list.add("Banana");
+						list.add("Apple");
 
-					System.out.println(list);
+						System.out.println(list);
 
-		=> ArrayList vs LinkedList
+			=> ArrayList vs LinkedList
 
-			| Feature            | ArrayList              | LinkedList             |
-			| ------------------ | ---------------------- | ---------------------- |
-			| Data Structure     | Dynamic Array          | Doubly Linked List     |
-			| Access time        | Fast (O(1))            | Slow (O(n))            |
-			| Insertion/Deletion | Slow (shifting needed) | Fast                   |
-			| Memory             | Less memory            | More memory            |
-			| Best for           | Read operations        | Frequent insert/delete |
+				| Feature            | ArrayList              | LinkedList             |
+				| ------------------ | ---------------------- | ---------------------- |
+				| Data Structure     | Dynamic Array          | Doubly Linked List     |
+				| Access time        | Fast (O(1))            | Slow (O(n))            |
+				| Insertion/Deletion | Slow (shifting needed) | Fast                   |
+				| Memory             | Less memory            | More memory            |
+				| Best for           | Read operations        | Frequent insert/delete |
 
 
-	2. Set Interface
+		2. Set Interface
 
-		* Stores unique elements only.
+			* Stores unique elements only.
 
-			Characteristics
+				Characteristics
 
-				- No duplicates
-				- No indexing
-				- Some implementations maintain order
+					- No duplicates
+					- No indexing
+					- Some implementations maintain order
 
-			Implementations
+				Implementations
 
-				- HashSet
-				- LinkedHashSet
-				- TreeSet					
+					- HashSet
+					- LinkedHashSet
+					- TreeSet					
 
-				Example:
+					Example:
 
-					Set<Integer> set = new HashSet<>();
+						Set<Integer> set = new HashSet<>();
 
-					set.add(10);
-					set.add(20);
-					set.add(10);
+						set.add(10);
+						set.add(20);
+						set.add(10);
 
-					System.out.println(set);
+						System.out.println(set);
 
-					Output: [10, 20]
+						Output: [10, 20]
 
-		=> HashSet vs TreeSet
+			=> HashSet vs TreeSet
 
-			| Feature        | HashSet         | TreeSet             |
-			| -------------- | --------------- | ------------------- |
-			| Order          | No order        | Sorted order        |
-			| Data structure | Hash table      | Red-Black Tree      |
-			| Performance    | Faster (O(1))   | Slower (O(log n))   |
-			| Null values    | Allows one null | Does not allow null |
-			| Use case       | Fast lookup     | Sorted data         |
+				| Feature        | HashSet         | TreeSet             |
+				| -------------- | --------------- | ------------------- |
+				| Order          | No order        | Sorted order        |
+				| Data structure | Hash table      | Red-Black Tree      |
+				| Performance    | Faster (O(1))   | Slower (O(log n))   |
+				| Null values    | Allows one null | Does not allow null |
+				| Use case       | Fast lookup     | Sorted data         |
 
-	3. Queue Interface
+		3. Queue Interface
 
-		* Used for FIFO (First In First Out) operations.
+			* Used for FIFO (First In First Out) operations.
 
-			Implementations
+				Implementations
 
-				- PriorityQueue
-				- LinkedList
-				- ArrayDeque
+					- PriorityQueue
+					- LinkedList
+					- ArrayDeque
 
-				Example:
+					Example:
 
-					Queue<Integer> queue = new LinkedList<>();
+						Queue<Integer> queue = new LinkedList<>();
 
-					queue.add(1);
-					queue.add(2);
+						queue.add(1);
+						queue.add(2);
 
-					System.out.println(queue.poll());
+						System.out.println(queue.poll());
 
-	4. Map Interface
+		4. Map Interface
 
-		* Stores key-value pairs.
+			* Stores key-value pairs.
 
-			Characteristics
+				Characteristics
 
-				- Keys must be unique
-				- Values can be duplicated
-				- Not part of Collection interface
+					- Keys must be unique
+					- Values can be duplicated
+					- Not part of Collection interface
 
-			Implementations
+				Implementations
 
-				- HashMap
-				- LinkedHashMap
-				- TreeMap
-				- Hashtable
+					- HashMap
+					- LinkedHashMap
+					- TreeMap
+					- Hashtable
 
-		=> HashMap vs LinkedHashMap vs TreeMap
-		
-			| Feature        | HashMap        | LinkedHashMap             | TreeMap           |
-			| -------------- | -------------- | ------------------------- | ----------------- |
-			| Order          | No order       | Maintains insertion order | Sorted by key     |
-			| Data structure | Hash table     | Hash table + linked list  | Red-Black Tree    |
-			| Performance    | Fastest (O(1)) | Slightly slower           | Slower (O(log n)) |
-			| Null key       | 1 allowed      | 1 allowed                 | Not allowed       |
-			| Use case       | Fast lookup    | Ordered data              | Sorted data       |
-
-			=> HashMap Example
-
-				Map<Integer,String> map = new HashMap<>();
-				map.put(3,"C");
-				map.put(1,"A");
-				map.put(2,"B");
-
-				System.out.println(map);
-
-				- Order not guaranteed
-
-			=> LinkedHashMap Example
+			=> HashMap vs LinkedHashMap vs TreeMap
 			
-				Map<Integer,String> map = new LinkedHashMap<>();
+				| Feature        | HashMap        | LinkedHashMap             | TreeMap           |
+				| -------------- | -------------- | ------------------------- | ----------------- |
+				| Order          | No order       | Maintains insertion order | Sorted by key     |
+				| Data structure | Hash table     | Hash table + linked list  | Red-Black Tree    |
+				| Performance    | Fastest (O(1)) | Slightly slower           | Slower (O(log n)) |
+				| Null key       | 1 allowed      | 1 allowed                 | Not allowed       |
+				| Use case       | Fast lookup    | Ordered data              | Sorted data       |
 
-				Maintains insertion order.
+				=> HashMap Example
 
-			=> TreeMap Example	
+					Map<Integer,String> map = new HashMap<>();
+					map.put(3,"C");
+					map.put(1,"A");
+					map.put(2,"B");
 
-				Map<Integer,String> map = new TreeMap<>();
+					System.out.println(map);
 
-				Output automatically sorted by key.
+					- Order not guaranteed
 
-=> Quick Summary
-	
-	| Interface | Feature                     | Example Classes       |
-	| --------- | --------------------------- | --------------------- |
-	| List      | Ordered, duplicates allowed | ArrayList, LinkedList |
-	| Set       | Unique elements             | HashSet, TreeSet      |
-	| Map       | Key-value pairs             | HashMap, TreeMap      |
+				=> LinkedHashMap Example
+				
+					Map<Integer,String> map = new LinkedHashMap<>();
+
+					Maintains insertion order.
+
+				=> TreeMap Example	
+
+					Map<Integer,String> map = new TreeMap<>();
+
+					Output automatically sorted by key.
+
+	=> Quick Summary
+		
+		| Interface | Feature                     | Example Classes       |
+		| --------- | --------------------------- | --------------------- |
+		| List      | Ordered, duplicates allowed | ArrayList, LinkedList |
+		| Set       | Unique elements             | HashSet, TreeSet      |
+		| Map       | Key-value pairs             | HashMap, TreeMap      |
 
 	=> Short Notes:
 
@@ -202,269 +202,249 @@ Collections Framework
 		Map stores key-value pairs with unique keys, implemented by classes like HashMap, LinkedHashMap, and TreeMap. 
 		HashMap provides fast access, LinkedHashMap maintains insertion order, and TreeMap stores elements in sorted order.			
 
+	=> Common Methods in Collections
 
-=> Important Collection Classes
+		| Method       | Purpose             |
+		| ------------ | ------------------- |
+		| `add()`      | Add element         |
+		| `remove()`   | Remove element      |
+		| `size()`     | Number of elements  |
+		| `contains()` | Check element       |
+		| `clear()`    | Remove all elements |
 
-	| Interface | Class      | 특징                     |
-	| --------- | ---------- | ----------------------- |
-	| List      | ArrayList  | Fast access             |
-	| List      | LinkedList | Fast insertion/deletion |
-	| Set       | HashSet    | No duplicates           |
-	| Set       | TreeSet    | Sorted set              |
-	| Map       | HashMap    | Fast key-value storage  |
-	| Map       | TreeMap    | Sorted map              |
+	=> Collections Utility Class
 
-=> Common Methods in Collections
+		* Java provides a Collections class with useful algorithms.
 
-	| Method       | Purpose             |
-	| ------------ | ------------------- |
-	| `add()`      | Add element         |
-	| `remove()`   | Remove element      |
-	| `size()`     | Number of elements  |
-	| `contains()` | Check element       |
-	| `clear()`    | Remove all elements |
+		Example: 
 
-=> Collections Utility Class
-
-	* Java provides a Collections class with useful algorithms.
-
-	Example: 
-
-		Collections.sort(list);
-		Collections.reverse(list);
-		Collections.shuffle(list);
-
-
-=> Short Notes:
-
-	The Java Collections Framework is a set of interfaces and classes used to store and manipulate groups of objects dynamically. 
-	It includes core interfaces like List, Set, Queue, and Map with implementations such as ArrayList, HashSet, and HashMap. 
-	It provides built-in algorithms and improves efficiency compared to arrays
-
+			Collections.sort(list);
+			Collections.reverse(list);
+			Collections.shuffle(list);
 
 Iterators
 
-=> What is an Iterator in Java?
+	=> What is an Iterator in Java?
 
-	* An Iterator is an object used to traverse (iterate) through elements of a collection one by one.
+		* An Iterator is an object used to iterate through elements of a collection one by one.
 
-	In simple terms: Iterator helps you read and remove elements from a collection safely.
+		In simple terms: Iterator helps you read and remove elements from a collection safely.
 
-	- It belongs to the java.util package.
+		- It belongs to the java.util package.
 
-=> Why Iterator is Used
+	=> Why Iterator is Used
 
-	- To loop through collections
-	- To avoid ConcurrentModificationException
-	- To remove elements safely during iteration
+		- To loop through collections
+		- To avoid ConcurrentModificationException
+		- To remove elements safely during iteration
 
-=> How to Use an Iterator
+	=> How to Use an Iterator
 
-	1. Get iterator from collection
-	2. Check if next element exists
-	3. Access element
+		1. Get iterator from collection
+		2. Check if next element exists
+		3. Access element
 
-	Example:
+		Example:
 
-		import java.util.*;
+			import java.util.*;
 
-		public class Main {
-		    public static void main(String[] args) {
-		        List<String> list = new ArrayList<>();
+			public class Main {
+			    public static void main(String[] args) {
+			        List<String> list = new ArrayList<>();
 
-		        list.add("Java");
-		        list.add("Python");
-		        list.add("C++");
+			        list.add("Java");
+			        list.add("Python");
+			        list.add("C++");
 
-		        Iterator<String> it = list.iterator();
+			        Iterator<String> it = list.iterator();
 
-		        while(it.hasNext()){
-		            System.out.println(it.next());
-		        }
-		    }
-		}
+			        while(it.hasNext()){
+			            System.out.println(it.next());
+			        }
+			    }
+			}
 
-		Output: Java Python C++
+			Output: Java Python C++
 
-=> Important Methods of Iterator
+	=> Important Methods of Iterator
 
-	| Method      | Description                   |
-	| ----------- | ----------------------------- |
-	| `hasNext()` | Checks if next element exists |
-	| `next()`    | Returns next element          |
-	| `remove()`  | Removes current element       |
+		| Method      | Description                   |
+		| ----------- | ----------------------------- |
+		| `hasNext()` | Checks if next element exists |
+		| `next()`    | Returns next element          |
+		| `remove()`  | Removes current element       |
 
-	=> Example Using remove()
+		=> Example Using remove()
 
-		Iterator<Integer> it = list.iterator();
+			Iterator<Integer> it = list.iterator();
+
+			while(it.hasNext()){
+			    int num = it.next();
+			    if(num == 10){
+			        it.remove();
+			    }
+			}
+
+			✔ Safe removal during iteration.
+
+	=> Types of Iterators
+
+		* Java provides three main iterators:
+
+		| Iterator       | Used For             | Direction          |
+		| -------------- | -------------------- | ------------------ |
+		| `Iterator`     | All collections      | Forward only       |
+		| `ListIterator` | List implementations | Forward & backward |
+		| `Enumeration`  | Legacy classes       | Forward only       |
+
+	=> ListIterator Example
+
+		ListIterator<String> it = list.listIterator();
 
 		while(it.hasNext()){
-		    int num = it.next();
-		    if(num == 10){
-		        it.remove();
-		    }
+		    System.out.println(it.next());
 		}
 
-		✔ Safe removal during iteration.
+		while(it.hasPrevious()){
+		    System.out.println(it.previous());
+		}
 
-=> Types of Iterators
+		✔ Supports bi-directional traversal
 
-	* Java provides three main iterators:
+	=> Iterator vs For Loop
 
-	| Iterator       | Used For             | Direction          |
-	| -------------- | -------------------- | ------------------ |
-	| `Iterator`     | All collections      | Forward only       |
-	| `ListIterator` | List implementations | Forward & backward |
-	| `Enumeration`  | Legacy classes       | Forward only       |
+		| Feature                | Iterator | For Loop |
+		| ---------------------- | -------- | -------- |
+		| Remove elements safely | Yes    	| Risky  	|
+		| Works with collections | Yes    	| Limited  |
+		| Index access           | No     	| Yes    	|
 
-=> ListIterator Example
+	=> Iterator vs Enumeration
 
-	ListIterator<String> it = list.listIterator();
+		| Feature         | Iterator    | Enumeration       |
+		| --------------- | ----------- | ----------------- |
+		| Remove elements | Yes       	| No        	     |
+		| Modern API      | Yes       	| Legacy	         |
+		| Used with       | Collections | Vector, Hashtable |
 
-	while(it.hasNext()){
-	    System.out.println(it.next());
-	}
+	Comparable vs Comparator in Java
 
-	while(it.hasPrevious()){
-	    System.out.println(it.previous());
-	}
+		* Both Comparable and Comparator are used to sort objects in Java.
 
-	✔ Supports bi-directional traversal
+			The key difference:
 
-=> Iterator vs For Loop
+				Comparable → defines natural sorting inside the class
+				Comparator → defines custom sorting outside the class
 
-	| Feature                | Iterator | For Loop |
-	| ---------------------- | -------- | -------- |
-	| Remove elements safely | Yes    	| Risky  	|
-	| Works with collections | Yes    	| Limited  |
-	| Index access           | No     	| Yes    	|
+			1. Comparable Interface
 
-=> Iterator vs Enumeration
+				* Used to define natural ordering of objects.
 
-	| Feature         | Iterator    | Enumeration       |
-	| --------------- | ----------- | ----------------- |
-	| Remove elements | Yes       	| No        	     |
-	| Modern API      | Yes       	| Legacy	         |
-	| Used with       | Collections | Vector, Hashtable |
+					It belongs to:
 
-Comparable vs Comparator in Java
+						java.lang.Comparable
 
-	* Both Comparable and Comparator are used to sort objects in Java.
+					Method
 
-		The key difference:
+						compareTo()
 
-			Comparable → defines natural sorting inside the class
-			Comparator → defines custom sorting outside the class
+					Syntax
 
-		1. Comparable Interface
+						public int compareTo(Object obj)
 
-			* Used to define natural ordering of objects.
+					Example
 
-				It belongs to:
+						class Student implements Comparable<Student> {
 
-					java.lang.Comparable
+						    int age;
 
-				Method
+						    Student(int age){
+						        this.age = age;
+						    }
 
-					compareTo()
+						    public int compareTo(Student s){
+						        return this.age - s.age;
+						    }
+						}
 
-				Syntax
+					Sorting:
 
-					public int compareTo(Object obj)
+						Collections.sort(studentList);
 
-				Example
+						✔ Sorting logic is inside the class
 
-					class Student implements Comparable<Student> {
+			2. Comparator Interface
+			
+				* Used to define custom sorting logic.
 
-					    int age;
+					It belongs to:
 
-					    Student(int age){
-					        this.age = age;
-					    }
+						java.util.Comparator
 
-					    public int compareTo(Student s){
-					        return this.age - s.age;
-					    }
-					}
+					Method
 
-				Sorting:
+						compare()
 
-					Collections.sort(studentList);
+					Syntax
 
-					✔ Sorting logic is inside the class
+						public int compare(Object o1, Object o2)
 
-		2. Comparator Interface
-		
-			* Used to define custom sorting logic.
+					Example
 
-				It belongs to:
+						class AgeComparator implements Comparator<Student> {
 
-					java.util.Comparator
-
-				Method
-
-					compare()
-
-				Syntax
-
-					public int compare(Object o1, Object o2)
-
-				Example
-
-					class AgeComparator implements Comparator<Student> {
-
-					    public int compare(Student s1, Student s2){
-					        return s1.age - s2.age;
-					    }
-					}
+						    public int compare(Student s1, Student s2){
+						        return s1.age - s2.age;
+						    }
+						}
 
 
-				Sorting:
+					Sorting:
 
-					Collections.sort(studentList, new AgeComparator());
+						Collections.sort(studentList, new AgeComparator());
 
-					✔ Sorting logic is outside the class
+						✔ Sorting logic is outside the class
 
-		=> Key Differences
+			=> Key Differences
 
-			| Feature                   | Comparable        | Comparator              |
-			| ------------------------- | ----------------- | ----------------------- |
-			| Package                   | `java.lang`       | `java.util`             |
-			| Method                    | `compareTo()`     | `compare()`             |
-			| Sorting logic             | Inside class      | Outside class           |
-			| Number of sorting options | One               | Multiple                |
-			| Modification              | Must modify class | No need to modify class |
+				| Feature                   | Comparable        | Comparator              |
+				| ------------------------- | ----------------- | ----------------------- |
+				| Package                   | `java.lang`       | `java.util`             |
+				| Method                    | `compareTo()`     | `compare()`             |
+				| Sorting logic             | Inside class      | Outside class           |
+				| Number of sorting options | One               | Multiple                |
+				| Modification              | Must modify class | No need to modify class |
 
-		=> Example Scenario
+			=> Example Scenario
 
-			Suppose Student has:
+				Suppose Student has:
 
-				- Age
-				- Name
-				- Marks
-
-			Comparable
-
-				Sort by default field (e.g., age)
-
-			Comparator
-
-				Sort by different fields
-
+					- Age
 					- Name
 					- Marks
-					- Age
 
-	=> Modern Java (Lambda Example)
+				Comparable
 
-		* Comparator can be simplified:
+					Sort by default field (e.g., age)
 
-			Example:
+				Comparator
 
-				studentList.sort((s1, s2) -> s1.age - s2.age);
+					Sort by different fields
 
-	=> Short Notes:
+						- Name
+						- Marks
+						- Age
 
-		Comparable is used to define the natural ordering of objects within the class by implementing the compareTo() method. 
-		Comparator is used to define custom sorting logic outside the class using the compare() method. 
-		Comparable allows only one sorting logic, while Comparator supports multiple sorting strategies.
+		=> Modern Java (Lambda Example)
+
+			* Comparator can be simplified:
+
+				Example:
+
+					studentList.sort((s1, s2) -> s1.age - s2.age);
+
+		=> Short Notes:
+
+			Comparable is used to define the natural ordering of objects within the class by implementing the compareTo() method. 
+			Comparator is used to define custom sorting logic outside the class using the compare() method. 
+			Comparable allows only one sorting logic, while Comparator supports multiple sorting strategies.

@@ -2,9 +2,9 @@ Java Keyword
 
 	=> What are Java Keywords?
 
-		* Java keywords are reserved words that have a predefined meaning in the Java language.
-
-		👉 In simple terms: Keywords are words that cannot be used as variable names, class names, or method names because they are reserved by Java.
+		- Java keywords are reserved words that have predefined meanings in the Java language and cannot be used as identifiers like variable or class names. 
+		They are used to define structure, control flow, and object-oriented features in Java programs. 
+		Examples include class, public, static, final, and if.
 
 		Example:
 
@@ -99,9 +99,3 @@ Java Keyword
 		✔ Java keywords are case-sensitive
 		✔ Cannot be used as identifiers
 		✔ Defined by the Java language specification
-
-	=> Short Notes: 
-
-		Java keywords are reserved words that have predefined meanings in the Java language and cannot be used as identifiers like variable or class names. 
-		They are used to define structure, control flow, and object-oriented features in Java programs. 
-		Examples include class, public, static, final, and if.

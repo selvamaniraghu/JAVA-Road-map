@@ -2,9 +2,9 @@ Method References
 
 	=> What is a Method Reference?
 
-		* A method reference is a short way to refer to a method without executing it.
-
-		👉 In simple terms: Method references allow you to use an existing method instead of writing a lambda expression.
+		- A method reference is a short way to refer to a method without executing it using the :: operator. 
+		It is allow you to use an existing method instead of writing a lambda expression.. 
+		Method references improve readability and are commonly used with functional interfaces and the Stream API.
 
 		It uses the :: operator.
 
@@ -119,12 +119,3 @@ Method References
 			Can become:
 
 				System.out::println
-
-	=> Short Notes:
-
-		Method references in Java provide a shorthand way of referring to methods using the :: operator. 
-		They are used instead of lambda expressions when the lambda simply calls an existing method. 
-		Method references improve readability and are commonly used with functional interfaces and the Stream API.
-
-
-

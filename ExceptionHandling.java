@@ -1,6 +1,8 @@
 Exception Handling
 
-	* Exception handling is a mechanism used to handle runtime errors so that the program can continue execution without crashing.
+	* Exception handling in Java is a mechanism used to handle runtime errors so that the program continues execution normally. 
+		It uses try, catch, finally, throw, and throws keywords to manage exceptions. 
+		Java exceptions are classified into checked exceptions, which are handled at compile time, and unchecked exceptions, which occur at runtime.
 
 	Example Without Exception Handling: 
 
@@ -165,8 +167,6 @@ Exception Handling
 					| `FileNotFoundException`  | File missing            |
 					| `ClassNotFoundException` | Class not found         |
 
-
-
 			2. Unchecked Exceptions
 
 				* Unchecked exceptions are not checked at compile time.
@@ -236,9 +236,3 @@ Exception Handling
 		catch(ArrayIndexOutOfBoundsException e){
 		    System.out.println("Array index error");
 		}
-
-	=> Short Notes:
-
-		Exception handling in Java is a mechanism used to handle runtime errors so that the program continues execution normally. 
-		It uses try, catch, finally, throw, and throws keywords to manage exceptions. 
-		Java exceptions are classified into checked exceptions, which are handled at compile time, and unchecked exceptions, which occur at runtime.

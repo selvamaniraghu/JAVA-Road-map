@@ -2,9 +2,9 @@ Optional
 
 	=> What is Optional in Java?
 
-		* Optional is a container object that may or may not contain a value.
-
-		In simple terms: Optional helps avoid NullPointerException by explicitly handling missing values.
+		- Optional is a container object introduced in Java 8 that may contain a value or be empty. 
+		It helps prevent NullPointerException by forcing developers to explicitly handle missing values. 
+		Optional provides methods like orElse(), ifPresent(), and map() to safely operate on values.
 
 		It belongs to the package: java.util.Optional
 
@@ -106,11 +106,3 @@ Optional
 		| Safety            | Null-safe | Risk of NPE |
 		| Explicit handling | Yes       | No          |
 		| Code readability  | Better    | Poor        |
-
-	=> Short Notes: 
-
-		Optional is a container object introduced in Java 8 that may contain a value or be empty. 
-		It helps prevent NullPointerException by forcing developers to explicitly handle missing values. 
-		Optional provides methods like orElse(), ifPresent(), and map() to safely operate on values.
-
-

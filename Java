@@ -29,10 +29,50 @@ Core Java Concepts
 	# Functional interfaces (Predicate, Function, Consumer)
 	# Optional, Method References
 
+8. Others
+	# JPA
+	# Hibernate
+	# Microservicce
+	# Java Keyword
+	# Annotations
+	# transient
 
-JPA
-Hibernate
-Microservicce
-Java Keyword
-Annotations
-transient
+9. Java Problems
+
+🟢 EASY (Foundation — must be perfect)
+
+1. What is @SpringBootApplication?
+2. What are the components of @SpringBootApplication?
+3. What is @Component?
+4. Difference between @Component, @Service, @Repository?
+5. What is @Autowired?
+6. What is @RestController?
+7. Difference between @Controller and @RestController?
+8. What is @RequestMapping?
+9. What is @GetMapping / @PostMapping?
+10. What is @PathVariable?
+
+🟡 MEDIUM (Real interview level)
+
+11. Constructor vs Field Injection — which is better?
+12. What is @Qualifier?
+13. What is @Primary?
+14. What is @Bean and how is it different from @Component?
+15. What is @Configuration?
+16. What is @RequestParam vs @RequestBody?
+17. What is @ResponseBody?
+18. What is @Valid and how does validation work?
+19. What is @ExceptionHandler?
+20. What is @ControllerAdvice?
+
+🔴 HARD (Where most people fail)
+
+21. What is @Transactional and its propagation types?
+22. What is @Entity and how mapping works internally?
+23. What is @Table?
+24. What is @Id and @GeneratedValue strategies?
+25. What are @OneToMany and @ManyToOne mappings?
+26. FetchType.LAZY vs EAGER — when to use what?
+27. What is @Value vs @ConfigurationProperties?
+28. What is @EnableAutoConfiguration?
+29. How does Spring Boot Auto Configuration work internally?

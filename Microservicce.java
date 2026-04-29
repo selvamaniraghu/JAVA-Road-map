@@ -2,17 +2,9 @@ Microservicce
 
 	=> What are Microservices?
 
-		Microservices architecture is a design approach where an application is built as a collection of small, independent services.
-
-		👉 In simple terms: 
-
-			Instead of building one large application (monolith), we break it into multiple smaller services, each responsible for a specific function.
-
-		Each microservice:
-
-			- Runs independently
-			- Has its own database
-			- Communicates with other services using APIs
+		- Microservices architecture is a design approach where an application is divided into small, independent services that communicate through APIs. 
+		Each service is responsible for a specific business function and can be developed, deployed, and scaled independently. 
+		In Java, microservices are commonly built using Spring Boot and Spring Cloud.
 
 	=> Example: E-Commerce Application
 
@@ -123,10 +115,3 @@ Microservicce
 		}
 
 		- This service can run independently.
-
-	=> Short Notes:
-
-		Microservices architecture is a design approach where an application is divided into small, independent services that communicate through APIs. 
-		Each service is responsible for a specific business function and can be developed, deployed, and scaled independently. 
-		In Java, microservices are commonly built using Spring Boot and Spring Cloud.
-

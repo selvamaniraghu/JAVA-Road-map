@@ -2,11 +2,9 @@ Lambda expressions
 
 	=> Lambda expressions
 
-		* A Lambda expression is a short way to write anonymous functions (functions without a name).
-
-		👉 In simple terms: Lambda expressions allow you to write cleaner and shorter code for functional interfaces.
-
-		They are mainly used with functional interfaces.
+		- Lambda expressions in Java provide a Short way to implement functional interfaces using anonymous functions. 
+		In Java 8, It is reduce boilerplate code and improve readability. It is widely used with collections, streams, 
+		and functional interfaces such as Predicate, Function, and Consumer.
 
 	=> Syntax of Lambda Expression
 
@@ -76,7 +74,6 @@ Lambda expressions
 
 			}
 
-
 		Output : 30
 
 	=> Lambda in Collections
@@ -117,9 +114,3 @@ Lambda expressions
 		System.out.println(isEven.test(10));
 
 		Output : true
-
-	=> Short Notes: 
-
-		Lambda expressions in Java provide a concise way to implement functional interfaces using anonymous functions. 
-		Introduced in Java 8, they reduce boilerplate code and improve readability. 
-		Lambda expressions are widely used with collections, streams, and functional interfaces such as Predicate, Function, and Consumer.

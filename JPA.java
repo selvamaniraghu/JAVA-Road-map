@@ -2,12 +2,10 @@ JPA
 
 	=> What is JPA?
 
-		* JPA (Java Persistence API) is a Java specification used for managing relational data in Java applications.
-
-		👉 In simple terms: JPA allows Java objects to be stored and retrieved from a database automatically.
-
-		- It provides Object Relational Mapping (ORM).
-
+		- JPA (Java Persistence API) is a Java specification used to manage relational data using object-relational mapping. 
+		It allows Java objects to be mapped to database tables using annotations. JPA itself is not an implementation; 
+		frameworks like Hibernate implement it. In Spring Boot, JPA simplifies database operations by using repositories and entity classes.
+		
 	=> Important Point
 
 		* JPA is not an implementation, it is just a specification.
@@ -101,17 +99,3 @@ JPA
 		✔ Supports object-oriented programming
 		✔ Database independent
 		✔ Integrates well with Spring Boot
-
-	=> JPA vs Hibernate
-
-		| Feature    | JPA                 | Hibernate      |
-		| ---------- | ------------------- | -------------- |
-		| Type       | Specification       | Implementation |
-		| Purpose    | Defines ORM rules   | Implements ORM |
-		| Dependency | Uses implementation | Standalone ORM |
-
-	=> Short Notes: 
-
-		JPA (Java Persistence API) is a Java specification used to manage relational data using object-relational mapping. 
-		It allows Java objects to be mapped to database tables using annotations. JPA itself is not an implementation; 
-		frameworks like Hibernate implement it. In Spring Boot, JPA simplifies database operations by using repositories and entity classes.

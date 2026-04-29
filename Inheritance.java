@@ -64,7 +64,7 @@ Inheritance
 		private → not inherited
 		protected, public → inherited
 		default → inherited only within the same package
-	4. You can call parent members using super:
+	4. We can call parent members using super:
 		super.methodName();
 		super.variableName;
 	5. Avoids code duplication and supports polymorphism
@@ -205,50 +205,50 @@ Inheritance
 
 	=> Java 8 and Default Methods in Interfaces
 
-	* What Changed
+		* What Changed
 
-		Before Java 8, interfaces could only have abstract methods — no method body.
-		From Java 8 onward, interfaces can include:
-			- Default methods (with implementation)
-			- Static methods
-		This allowed Java to add new functionality to existing interfaces without breaking the classes that implement them.
+			Before Java 8, interfaces could only have abstract methods — no method body.
+			From Java 8 onward, interfaces can include:
+				- Default methods (with implementation)
+				- Static methods
+			This allowed Java to add new functionality to existing interfaces without breaking the classes that implement them.
 
-	=> The Problem: Multiple Inheritance Conflict
-		If a class implements two interfaces that both define a default method with the same signature, 
-		the compiler gets confused — it doesn’t know which one to use.
-		That’s the diamond problem reappearing through interfaces.
+		=> The Problem: Multiple Inheritance Conflict
+			If a class implements two interfaces that both define a default method with the same signature, 
+			the compiler gets confused — it doesn’t know which one to use.
+			That’s the diamond problem reappearing through interfaces.
 
-	Example
+		Example
 
-	interface A {
-	    default void show() {
-	        System.out.println("Interface A default method");
-	    }
-	}
+		interface A {
+		    default void show() {
+		        System.out.println("Interface A default method");
+		    }
+		}
 
-	interface B {
-	    default void show() {
-	        System.out.println("Interface B default method");
-	    }
-	}
+		interface B {
+		    default void show() {
+		        System.out.println("Interface B default method");
+		    }
+		}
 
-	// Class implements both interfaces
-	class C implements A, B {
-	    // Must override show() to resolve conflict
-	    @Override
-	    public void show() {
-	        // We can choose one or customize
-	        A.super.show(); // explicitly call A's version
-	        System.out.println("Class C custom method");
-	    }
-	}
+		// Class implements both interfaces
+		class C implements A, B {
+		    // Must override show() to resolve conflict
+		    @Override
+		    public void show() {
+		        // We can choose one or customize
+		        A.super.show(); // explicitly call A's version
+		        System.out.println("Class C custom method");
+		    }
+		}
 
-	public class Main {
-	    public static void main(String[] args) {
-	        C obj = new C();
-	        obj.show();
-	    }
-	}
+		public class Main {
+		    public static void main(String[] args) {
+		        C obj = new C();
+		        obj.show();
+		    }
+		}
 
 
 	Key points
@@ -259,4 +259,3 @@ Inheritance
 	| Conflict       | Occurs if multiple interfaces have same default method                                                             |
 	| Resolution     | Class must override the method and can call a specific interface’s method using `InterfaceName.super.methodName()` |
 	| Static methods | Declared in interface using `static`, called via interface name only (not inherited)                               |
-

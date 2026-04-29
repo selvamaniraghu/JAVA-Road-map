@@ -117,7 +117,7 @@ Control Flow
 					
 		3. Branching Statements
 		
-			* Used to alter the normal flow of loops or switch statements.
+			* Used to alter the normal flow of loops.
 
 				=> break
 

@@ -1,8 +1,8 @@
 Encapsulation
 
-	- Encapsulation is the OOP concept of wrapping data (variables) and methods (functions) 
-	that operate on that data into a single unit — a class — while controlling access to them.
-	- In short: Data hiding + controlled access through getters/setters. (It protects internal data from unintended modification.)
+	- Encapsulation in Java means hiding data by making fields private and exposing them through public getters and setters. 
+	This ensures controlled access, data security, and allows validation before modifying values. 
+	It helps make the code modular and maintainable. 
 
 	=> Real-World Analogy
 	Think of a capsule (medicine capsule):
@@ -65,9 +65,3 @@ Encapsulation
 	| Hides data                                        | Hides implementation                      |
 	| Achieved with private variables + getters/setters | Achieved with abstract classes/interfaces |
 	| Focuses on protection                             | Focuses on design                         |
-
-	=> Summary
-	“Encapsulation in Java means hiding data by making fields private and exposing them through public getters and setters. 
-	This ensures controlled access, data security, and allows validation before modifying values. 
-	It helps make the code modular and maintainable. 
-	In simple terms, it’s data hiding plus controlled access.”

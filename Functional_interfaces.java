@@ -2,7 +2,10 @@ Functional interfaces
 
 	=> What is a Functional Interface?
 
-		* A functional interface is an interface that contains exactly one abstract method.
+		- Functional interfaces in Java contain exactly one abstract method and are used with lambda expressions. 
+		The Predicate interface is used for testing conditions and returns a boolean. 
+		The Function interface is used to transform data from one type to another. 
+		The Consumer interface performs operations on data without returning a value. 
 
 			It can have:
 
@@ -124,11 +127,3 @@ Functional interfaces
 
 
 		Output : 4 16
-
-	=> Short Notes: 
-
-		Functional interfaces in Java contain exactly one abstract method and are used with lambda expressions. 
-		The Predicate interface is used for testing conditions and returns a boolean. 
-		The Function interface is used to transform data from one type to another. 
-		The Consumer interface performs operations on data without returning a value. 
-

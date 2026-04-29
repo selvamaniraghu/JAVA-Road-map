@@ -1,0 +1,205 @@
+JAVA PROBLEMS
+
+	1. Reverse a String
+
+		- Reverse a string without using built-in methods.
+
+			String str = "Tony";
+			String reversed = "";
+
+			for(int i = str.length() - 1; i >= 0; i--) {
+			    reversed += str.charAt(i);
+			}
+
+			System.out.println(reversed);
+
+	2. Check Palindrome
+
+		- Check if a string is a palindrome.
+
+			String str = "madam";
+			String rev = new StringBuilder(str).reverse().toString();
+
+			if(str.equals(rev)) {
+			    System.out.println("Palindrome");
+			}
+
+	3. Find Largest Element in Array
+
+		int[] arr = {10, 20, 5, 40};
+
+		int max = arr[0];
+
+		for(int num : arr){
+		    if(num > max){
+		        max = num;
+		    }
+		}
+
+		System.out.println(max);
+
+	4. Count Vowels in String
+
+		String str = "Hello";
+
+		int count = 0;
+
+		for(char c : str.toLowerCase().toCharArray()){
+		    if("aeiou".indexOf(c) != -1){
+		        count++;
+		    }
+		}
+
+		System.out.println(count);
+
+	5. Fibonacci Series
+
+		int n = 10;
+		int a = 0, b = 1;
+
+		for(int i = 0; i < n; i++) {
+		    System.out.print(a + " ");
+		    int c = a + b;
+		    a = b;
+		    b = c;
+		}
+
+	6. Check Prime Number
+
+		int num = 29;
+		boolean isPrime = true;
+
+		for(int i = 2; i <= num / 2; i++){
+		    if(num % i == 0){
+		        isPrime = false;
+		        break;
+		    }
+		}
+
+		System.out.println(isPrime);
+
+	7. Remove Duplicates from Array
+
+		int[] arr = {1,2,2,3,4,4};
+
+		Set<Integer> set = new HashSet<>();
+
+		for(int num : arr){
+		    set.add(num);
+		}
+
+		System.out.println(set);
+
+	8. Find Frequency of Characters
+
+		String str = "programming";
+
+		Map<Character, Integer> map = new HashMap<>();
+
+		for(char c : str.toCharArray()){
+		    map.put(c, map.getOrDefault(c, 0) + 1);
+		}
+
+		System.out.println(map);
+
+	9. Sort Array
+
+		int[] arr = {5, 2, 9, 1};
+
+		Arrays.sort(arr);
+
+		System.out.println(Arrays.toString(arr));
+
+	10. Anagram Check
+
+		String s1 = "listen";
+		String s2 = "silent";
+
+		char[] a = s1.toCharArray();
+		char[] b = s2.toCharArray();
+
+		Arrays.sort(a);
+		Arrays.sort(b);
+
+		System.out.println(Arrays.equals(a, b));
+
+	11. Find Duplicate Elements
+
+		int[] arr = {1,2,3,2,4,1};
+
+		Set<Integer> seen = new HashSet<>();
+		Set<Integer> duplicates = new HashSet<>();
+
+		for(int num : arr) {
+		    if(!seen.add(num)){
+		        duplicates.add(num);
+		    }
+		}
+
+		System.out.println(duplicates);
+
+	12. Two Sum Problem (Very Important ⭐)
+
+		int[] arr = {2,7,11,15};
+		int target = 9;
+
+		Map<Integer,Integer> map = new HashMap<>();
+
+		for(int i=0;i<arr.length;i++){
+		    int diff = target - arr[i];
+
+		    if(map.containsKey(diff)){
+		        System.out.println(diff + " " + arr[i]);
+		    }
+
+		    map.put(arr[i], i);
+		}
+
+	13. Reverse Integer
+
+		int num = 1234;
+		int rev = 0;
+
+		while(num != 0){
+		    rev = rev * 10 + num % 10;
+		    num /= 10;
+		}
+
+		System.out.println(rev);
+
+	14. Find Second Largest Number
+
+		int[] arr = {10, 20, 5, 40};
+
+		int first = Integer.MIN_VALUE;
+		int second = Integer.MIN_VALUE;
+
+		for(int num : arr){
+		    if(num > first){	
+		        second = first;
+		        first = num;
+		    } else if(num > second && num != first){
+		        second = num;
+		    }
+		}
+
+		System.out.println(second);
+
+	15. String Compression
+
+		String str = "aaabbc";
+		String result = "";
+
+		int count = 1;
+
+		for(int i = 1; i < str.length(); i++){
+		    if(str.charAt(i) == str.charAt(i-1)){
+		        count++;
+		    } else {
+		        result += str.charAt(i-1) + "" + count;
+		        count = 1;
+		    }
+		}
+		result += str.charAt(str.length()-1) + "" + count;
+
+		System.out.println(result);

@@ -2,11 +2,10 @@ Streams API
 
 	=> What is Stream API in Java?
 
-		* The Stream API is used to process collections of data in a functional and efficient way.
-
-		👉 In simple terms: 
-
-			Stream API allows you to perform operations like filtering, mapping, sorting, and collecting data from collections using functional programming.
+		* The Stream API is used to process collections of data in a functional and efficient way. 
+		It allows operations like filtering, mapping, and sorting using lambda expressions. 
+		Streams consist of intermediate operations that transform data and terminal operations that produce results. 
+		They improve code readability and support parallel processing.
 
 		- It is part of java.util.stream package.
 
@@ -41,13 +40,6 @@ Streams API
 	=> Stream Processing Flow
 
 		Collection → Stream → Intermediate Operations → Terminal Operation
-
-		Example:
-
-			list.stream()
-			    .filter(n -> n > 5)
-			    .map(n -> n * 2)
-			    .forEach(System.out::println);
 
 	=> Types of Stream Operations
 
@@ -136,10 +128,3 @@ Streams API
 		| Purpose         | Process data | Store data |
 		| Traversal       | One-time     | Multiple   |
 		| Lazy evaluation | Yes          | No         |
-
-	=> Short Notes : 
-
-		The Stream API in Java provides a functional approach to processing collections of data. 
-		It allows operations like filtering, mapping, and sorting using lambda expressions. 
-		Streams consist of intermediate operations that transform data and terminal operations that produce results. 
-		They improve code readability and support parallel processing.
