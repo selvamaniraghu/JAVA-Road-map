@@ -69,16 +69,25 @@ Collections Framework
 
 						System.out.println(list);
 
-			=> ArrayList vs LinkedList
+			=> Difference between ArrayList and LinkedList?
 
-				| Feature            | ArrayList              | LinkedList             |
-				| ------------------ | ---------------------- | ---------------------- |
-				| Data Structure     | Dynamic Array          | Doubly Linked List     |
-				| Access time        | Fast (O(1))            | Slow (O(n))            |
-				| Insertion/Deletion | Slow (shifting needed) | Fast                   |
-				| Memory             | Less memory            | More memory            |
-				| Best for           | Read operations        | Frequent insert/delete |
+				ArrayList
 
+					- Internally uses a dynamic array.
+					- Fast random access.
+					- Insertion/deletion in the middle can be slower.
+					- Less memory
+					- Best for read operations
+
+				LinkedList
+
+					- Uses linked nodes.
+					- Random access is slower.
+					- Insertion/deletion can be efficient when the node position is already known.
+					- More memory
+					- Best for Frequent insert/delete
+
+				For most normal application use cases, ArrayList is generally preferred unless there is a specific reason to use LinkedList.
 
 		2. Set Interface
 
@@ -185,22 +194,7 @@ Collections Framework
 
 					Map<Integer,String> map = new TreeMap<>();
 
-					Output automatically sorted by key.
-
-	=> Quick Summary
-		
-		| Interface | Feature                     | Example Classes       |
-		| --------- | --------------------------- | --------------------- |
-		| List      | Ordered, duplicates allowed | ArrayList, LinkedList |
-		| Set       | Unique elements             | HashSet, TreeSet      |
-		| Map       | Key-value pairs             | HashMap, TreeMap      |
-
-	=> Short Notes:
-
-		List stores ordered elements and allows duplicates, with common implementations like ArrayList and LinkedList. 
-		Set stores unique elements and includes implementations like HashSet and TreeSet. 
-		Map stores key-value pairs with unique keys, implemented by classes like HashMap, LinkedHashMap, and TreeMap. 
-		HashMap provides fast access, LinkedHashMap maintains insertion order, and TreeMap stores elements in sorted order.			
+					Output automatically sorted by key.	
 
 	=> Common Methods in Collections
 
@@ -237,12 +231,6 @@ Iterators
 		- To loop through collections
 		- To avoid ConcurrentModificationException
 		- To remove elements safely during iteration
-
-	=> How to Use an Iterator
-
-		1. Get iterator from collection
-		2. Check if next element exists
-		3. Access element
 
 		Example:
 
@@ -323,8 +311,8 @@ Iterators
 
 		| Feature         | Iterator    | Enumeration       |
 		| --------------- | ----------- | ----------------- |
-		| Remove elements | Yes       	| No        	     |
-		| Modern API      | Yes       	| Legacy	         |
+		| Remove elements | Yes       	| No        	    |
+		| Modern API      | Yes       	| Legacy	        |
 		| Used with       | Collections | Vector, Hashtable |
 
 	Comparable vs Comparator in Java
@@ -358,7 +346,7 @@ Iterators
 
 						    int age;
 
-						    Student(int age){
+						    Student(int age) {
 						        this.age = age;
 						    }
 
@@ -405,35 +393,6 @@ Iterators
 
 						✔ Sorting logic is outside the class
 
-			=> Key Differences
-
-				| Feature                   | Comparable        | Comparator              |
-				| ------------------------- | ----------------- | ----------------------- |
-				| Package                   | `java.lang`       | `java.util`             |
-				| Method                    | `compareTo()`     | `compare()`             |
-				| Sorting logic             | Inside class      | Outside class           |
-				| Number of sorting options | One               | Multiple                |
-				| Modification              | Must modify class | No need to modify class |
-
-			=> Example Scenario
-
-				Suppose Student has:
-
-					- Age
-					- Name
-					- Marks
-
-				Comparable
-
-					Sort by default field (e.g., age)
-
-				Comparator
-
-					Sort by different fields
-
-						- Name
-						- Marks
-						- Age
 
 		=> Modern Java (Lambda Example)
 

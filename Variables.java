@@ -1,8 +1,7 @@
 Variables
 
-	* A variable is a named memory location used to store data that can change during program execution.
-
-	In simple words: A variable is a container for holding values in a program.
+	* “A variable is a named memory location used to store data that can change during program execution. 
+	   In Java, variables are classified as local, instance, and static variables based on their scope, lifetime, and memory allocation.”
 
 => Why Do We Need Variables?
 	
@@ -62,8 +61,3 @@ Variables
 		| Local         | Inside method/block     | Method only  | Stack       |
 		| Instance      | Inside class            | Object level | Heap        |
 		| Static        | Inside class (`static`) | Class level  | Method area |
-
-	Short Notes:
-
-		“A variable is a named memory location used to store data that can change during program execution. 
-		In Java, variables are classified as local, instance, and static variables based on their scope, lifetime, and memory allocation.”

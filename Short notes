@@ -125,7 +125,7 @@ JAVA
 	* Java exceptions are classified into checked exceptions, and unchecked exceptions
 	* Checked exceptions are checked at compile time and must be handled using try-catch or throws. They usually represent external issues such as file or database errors. 
 	* Unchecked exceptions occur at runtime due to programming mistakes like null pointer access or division by zero, 
-	and the compiler does not require them to be handled.
+	and the compiler does not require to be handled.
 
 15. Multithreading
 
@@ -323,9 +323,9 @@ SQL
 
 5. Primary Key
 
-	- A Primary Key is a column (or combination of columns) in a table that uniquely identifies each row (record) in that table.
+	- A Primary Key is a column it is used to uniquely identifies each row in that table.
 
-	- It ensures that no two rows have the same value in the primary key column.
+	- It is not allowed duplicate values
 
 6. Foreign Key
 
@@ -355,18 +355,6 @@ SQL
 
 		# GROUP BY → groups rows with the same values.
 		# HAVING → filters grouped results.
-
-	1. GROUP BY
-
-		- GROUP BY is used to group rows that have the same values in a column.
-
-		- It is commonly used with aggregate functions.
-
-	2. HAVING
-
-		- HAVING is used to filter the grouped results.
-
-		- It works after GROUP BY.
 
 11. JOINS
 
@@ -676,7 +664,7 @@ Angular
 
 		- Business logic
 
-6. Dependency Injection (DI)
+8. Dependency Injection (DI)
 
 			- Dependency Injection is a design pattern where Angular provides required dependencies automatically instead of creating them manually.
 
@@ -690,7 +678,7 @@ Angular
 
 				- Testability
 
-7. Directives
+9. Directives
 
 			- A directive is used to modify the behavior or structure of DOM elements.
 
@@ -704,7 +692,7 @@ Angular
 
 				- Custom Directives - User-defined directives
 
-8. Routing (Navigation)
+10. Routing (Navigation)
 
 	Angular Routing is a mechanism that allows navigation between different views/components in a Single Page Application (SPA) without reloading the page.
 
@@ -721,13 +709,13 @@ Angular
 
 				- Route guards - Used to control access to routes (e.g., authentication)
 
-8. Pipes (Data Transformation)
+11. Pipes (Data Transformation)
 
 			- A pipe is used to transform data in templates, such as formatting dates or text.
 
 			- Transform data in UI
 
-9. Data Binding (Very Important)
+12. Data Binding (Very Important)
 
 	Data binding in Angular is a way to synchronize data between the component and the view. It supports one-way binding like interpolation and property binding, event binding from view to component, and two-way binding using ngModel.
 
@@ -740,7 +728,7 @@ Angular
 		| Event binding    | `(click)="save()"`       |
 		| Two-way binding  | `[(ngModel)]="username"` |
 
-10. What is RxJS?
+13. What is RxJS?
 
 			- RxJS (Reactive Extensions for JavaScript) is a library used in Angular to handle asynchronous data streams using Observables.
 
@@ -752,11 +740,11 @@ Angular
 			- mergeMap() → run multiple requests
 			- debounceTime() → delay input (search)
 
-11. What is an Observable?
+14. What is an Observable?
 
 			- An Observable is a stream of data that can emit multiple values over time (like API responses, user input, events).
 
-12. Observable vs Promise
+15. Observable vs Promise
 
 			| Feature   | Observable          	| Promise   |
 			| --------- | ------------------- 	| --------- |
@@ -765,7 +753,7 @@ Angular
 			| Operators | ✅ Yes (map, filter) | ❌ Limited |
 			| Lazy      | ✅ Yes               | ❌ No      |
 
-13. Angular Form
+16. Angular Form
 
 	Angular forms are used to manage user input and validation. There are two types: template-driven forms, which are simple and defined in HTML, and reactive forms, which are more powerful and defined in TypeScript using FormGroup and FormControl.
 

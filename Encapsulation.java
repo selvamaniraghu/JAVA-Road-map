@@ -4,42 +4,31 @@ Encapsulation
 	This ensures controlled access, data security, and allows validation before modifying values. 
 	It helps make the code modular and maintainable. 
 
-	=> Real-World Analogy
-	Think of a capsule (medicine capsule):
-		- You see the capsule (interface)
-		- You cannot directly see or change what's inside (data hiding)
-	Similarly, in a Java class, internal details are hidden.
-
-	=> How Encapsulation Works in Java
-
-	1. Make variables private - Prevents direct access from outside the class.
-	2. Provide public getters and setters - Allows controlled access to data.
-
 	=> Code Example
 
-	class BankAccount {
-	    private double balance; // data hidden
+		class BankAccount {
+		    private double balance; // data hidden
 
-	    // getter
-	    public double getBalance() {
-	        return balance;
-	    }
+		    // getter
+		    public double getBalance() {
+		        return balance;
+		    }
 
-	    // setter with validation
-	    public void deposit(double amount) {
-	        if (amount > 0) {
-	            balance += amount;
-	        }
-	    }
-	}
+		    // setter with validation
+		    public void deposit(double amount) {
+		        if (amount > 0) {
+		            balance += amount;
+		        }
+		    }
+		}
 
-	public class Main {
-	    public static void main(String[] args) {
-	        BankAccount acc = new BankAccount();
-	        acc.deposit(500); // allowed
-	        System.out.println(acc.getBalance());
-	    }
-	}
+		public class Main {
+		    public static void main(String[] args) {
+		        BankAccount acc = new BankAccount();
+		        acc.deposit(500); // allowed
+		        System.out.println(acc.getBalance());
+		    }
+		}
 
 	✔ balance is protected
 	✔ Access only through controlled methods

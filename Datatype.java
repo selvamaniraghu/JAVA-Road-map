@@ -1,27 +1,11 @@
 Datatype
 
 	=> What is a Data Type?
-			“A data type in Java defines the type of data a variable can hold, how much memory is allocated, and what operations can be performed. 
-		Java has primitive data types for simple values like int and boolean, and non-primitive data types like String, arrays, and objects for complex data.”
-
-	Example:
-		int age = 25;
-
-		int → data type
-		age → variable
-		25 → value
-
-		Here, int tells Java:
-			
-			Store an integer
-			Allocate 4 bytes
-			Allow arithmetic operations
-
-	=> Types of Data Types in Java
-
-		“Primitive data types store simple values directly and have fixed size, while non-primitive data types store references 
+		A data type in Java defines the type of data a variable can hold, how much memory is allocated, and what operations can be performed. 
+		
+		Java has Primitive data types store simple values directly and have fixed size, while non-primitive data types store references 
 		to objects and can hold complex data. Primitives are faster and cannot be null, whereas non-primitives support methods, dynamic size, 
-		and can be null.”
+		and can be null.
 
 		1. Primitive Data Types
 
@@ -45,13 +29,6 @@ Datatype
 				- Classes
 				- Interfaces
 				- Enums
-
-			String name = "Tony";
-			int[] numbers = {1, 2, 3};
-
-			✔ Stores reference (address)
-			✔ Can have methods
-			✔ Created using new (except String literals)	
 
 		=> Key Differences (Most Important Table)
 
@@ -178,12 +155,6 @@ Datatype
 
 			=> Implicit Type Casting (Widening)
 
-				- Done automatically by the compiler
-				- Converting smaller data type → larger data type
-			 	- No data loss
-
-			 	Example:
-
 			 		int a = 10;
 					double b = a;
 
@@ -194,10 +165,6 @@ Datatype
 					Conversion Order: byte → short → int → long → float → double
 
 			=> Explicit Type Casting (Narrowing)
-
-				- Done manually by the programmer
-				- Converting larger data type → smaller data type
-				- May cause data loss
 
 				Example:
 

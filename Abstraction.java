@@ -8,14 +8,6 @@ Abstraction
 	
 	- In simple terms: We focus on what an object does, not how it does it.
 
-	=> How Abstraction is Achieved in Java	
-
-	| Approach         | Keyword/Concept     | Key Points                                                                          |
-	| ---------------- | ------------------- | ----------------------------------------------------------------------------------- |
-	| Abstract Classes | `abstract` keyword  | Can have both abstract and concrete (implemented) methods                           |
-	| Interfaces       | `interface` keyword | 100% abstract (till Java 7), can have `default` and `static` methods (since Java 8) |
-	
-
 	=> Abstract Class Example
 
 		abstract class Vehicle {
@@ -40,34 +32,9 @@ Abstraction
 		    }
 		}
 
-	=> Interface Example (Modern Java)
-
-		interface Payment {
-		    void pay(double amount); // abstract method
-
-		    default void displayMessage() { // default method (Java 8+)
-		        System.out.println("Payment in process...");
-		    }
-		}
-
-		class UPI implements Payment {
-		    public void pay(double amount) {
-		        System.out.println("Paid ₹" + amount + " via UPI");
-		    }
-		}
-
-		public class Test {
-		    public static void main(String[] args) {
-		        Payment p = new UPI();
-		        p.displayMessage();
-		        p.pay(500);
-		    }
-		}
-
 	=> Benefits of Abstraction
 
 		- Hides complex implementation details
 		- Promotes loose coupling between components
 		- Increases code flexibility and scalability
 		- Makes maintenance and changes easier
-

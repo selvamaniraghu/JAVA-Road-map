@@ -27,10 +27,6 @@ Streams API
 		    .filter(n -> n % 2 == 0)
 		    .forEach(System.out::println);
 
-		✔ Cleaner
-		✔ Less code
-		✔ More readable
-
 	=> What is a Stream?
 
 		* A stream is a sequence of elements supporting functional operations.

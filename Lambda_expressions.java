@@ -95,22 +95,3 @@ Lambda expressions
 		✔ Improves readability
 		✔ Supports functional programming
 		✔ Used with Streams API
-
-	=> Common Built-in Functional Interfaces
-
-		| Interface    | Method      |
-		| ------------ | ----------- |
-		| `Runnable`   | `run()`     |
-		| `Callable`   | `call()`    |
-		| `Comparator` | `compare()` |
-		| `Predicate`  | `test()`    |
-		| `Function`   | `apply()`   |
-		| `Consumer`   | `accept()`  |
-
-	=> Example Using Predicate
-
-		Predicate<Integer> isEven = n -> n % 2 == 0;
-
-		System.out.println(isEven.test(10));
-
-		Output : true

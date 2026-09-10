@@ -31,14 +31,6 @@ Exception Handling
 	=> Keywords Used in Exception Handling
 
 
-		| Keyword   | Purpose                       |
-		| --------- | ----------------------------- |
-		| `try`     | Code that may cause exception |
-		| `catch`   | Handles exception             |
-		| `finally` | Executes always               |
-		| `throw`   | Manually throw exception      |
-		| `throws`  | Declares exception            |
-
 	1. try-catch
 
 		* Used to handle exceptions.
@@ -188,16 +180,6 @@ Exception Handling
 					| `ArithmeticException`            | Divide by zero        |
 					| `ArrayIndexOutOfBoundsException` | Invalid array index   |
 					| `NumberFormatException`          | Invalid number format |
-
-		=> Key Differences
-		
-			| Feature             | Checked Exception | Unchecked Exception  |
-			| ------------------- | ----------------- | -------------------- |
-			| Checked by compiler | Yes               | No                   |
-			| Handling required   | Mandatory         | Optional             |
-			| Occurs at           | Compile time      | Runtime              |
-			| Cause               | External factors  | Programming errors   |
-			| Example             | IOException       | NullPointerException |
 				
 
 	=> Exception Hierarchy

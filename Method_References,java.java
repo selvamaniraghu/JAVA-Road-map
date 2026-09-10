@@ -3,7 +3,7 @@ Method References
 	=> What is a Method Reference?
 
 		- A method reference is a short way to refer to a method without executing it using the :: operator. 
-		It is allow you to use an existing method instead of writing a lambda expression.. 
+		It is allow to use an existing method instead of writing a lambda expression.. 
 		Method references improve readability and are commonly used with functional interfaces and the Stream API.
 
 		It uses the :: operator.

@@ -32,10 +32,11 @@ Core Java Concepts
 8. Others
 	# JPA
 	# Hibernate
-	# Microservicce
+	# Microservice
 	# Java Keyword
 	# Annotations
 	# transient
+	# Variables
 
 9. Java Problems
 
@@ -76,3 +77,7 @@ Core Java Concepts
 27. What is @Value vs @ConfigurationProperties?
 28. What is @EnableAutoConfiguration?
 29. How does Spring Boot Auto Configuration work internally?
+
+
+
+I’m looking for better career growth, challenging opportunities, and a chance to expand my skills.
