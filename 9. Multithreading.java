@@ -151,8 +151,8 @@ Concurrency
 
 		class MyThread extends Thread {
 
-		    public void run(){
-		        for(int i=1;i<=3;i++){
+		    public void run() {
+		        for(int i=1;i<=3;i++) {
 		            System.out.println(Thread.currentThread().getName());
 		        }
 		    }
@@ -262,16 +262,6 @@ Concurrency
 					- Web servers
 					- Spring Boot background tasks
 					- Microservices
-
-	=> Thread vs Runnable (Interview Point)
-
-		| Feature              | Thread             | Runnable               |
-		| -------------------- | ------------------ | ---------------------- |
-		| Type                 | Class              | Interface              |
-		| Inheritance          | Must extend Thread | Can implement Runnable |
-		| Multiple inheritance | Not possible	    | Possible	             |
-		| Flexibility          | Less flexible      | More flexible          |
-		| Recommended          | Less preferred	    | Preferred	             |
 
 	=> ExecutorService
 

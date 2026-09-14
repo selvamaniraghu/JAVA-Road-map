@@ -1,3 +1,7 @@
+OOPS stands for Object-Oriented Programming System, a computer programming model that builds software around data, or "objects," rather than functions and logic.
+
+Inheritance, Polymorphism, Abstraction, Encapsulation
+
 Inheritance
 
 	* Inheritance is one of the core concepts of Object-Oriented Programming (OOP).
@@ -7,6 +11,15 @@ Inheritance
 		- Code reusability (no need to rewrite existing logic)
 		- Extensibility (add or override behavior)
 		- Maintainability (common behavior in one place)
+
+	=> Types of Inheritance in Java
+
+	| Type             | Description                                                                                                     | Example          |
+	| ---------------- | --------------------------------------------------------------------------------------------------------------- | ---------------- |
+	| Single       	   | One class inherits another                                                                                      | `A -> B`         |
+	| Multilevel       | A class is derived from another derived class                                                                   | `A -> B -> C`    |
+	| Hierarchical     | Multiple classes inherit the same parent                                                                        | `A -> B, A -> C` |
+	| Multiple         | Java does not support multiple inheritance with classes (to avoid ambiguity). But it’s possible via interfaces. |                  |
 
 	Syntax:
 
@@ -20,44 +33,53 @@ Inheritance
 
 		Here, Child inherits all accessible members (fields, methods) from Parent.
 
-	Example:
+	=> Inheritance Hierarchy Diagram
 
-		// Parent class
-		class Vehicle {
-		    String brand = "Ford";
+		        ┌─────────────┐
+		        │   Vehicle   │   ← Superclass / Parent
+		        └─────┬───────┘
+		              │
+		   ┌──────────┴──────────┐
+		   │                     │
+		┌───────┐           ┌────────┐
+		│  Car  │           │  Bike  │  ← Subclasses / Child classes
+		└───────┘           └────────┘
 
-		    void start() {
-		        System.out.println("Vehicle is starting...");
-		    }
-		}
+		Explanation:
+			- Both Car and Bike inherit the common properties and behavior from Vehicle.
+			- Each subclass can add or override functionality as needed.
 
-		// Child class
-		class Car extends Vehicle {
-		    int wheels = 4;
+		Single Inheritance / Multilevel Inheritance Code Snippet Example:
 
-		    void display() {
-		        System.out.println("Brand: " + brand);
-		        System.out.println("Wheels: " + wheels);
-		    }
-		}
+			class Vehicle {
+			    void start() {
+			        System.out.println("Vehicle is starting...");
+			    }
+			}
 
-		// Main class
-		public class Main {
-		    public static void main(String[] args) {
-		        Car car = new Car();
-		        car.start();   // inherited method
-		        car.display(); // own method
-		    }
-		}
+			class Car extends Vehicle {
+			    void honk() {
+			        System.out.println("Car horn: Beep Beep!");
+			    }
+			}
 
-	=> Types of Inheritance in Java
-	
-		| Type             | Description                                                                                                     | Example          |
-		| ---------------- | --------------------------------------------------------------------------------------------------------------- | ---------------- |
-		| Single       	   | One class inherits another                                                                                      | `A -> B`         |
-		| Multilevel       | A class is derived from another derived class                                                                   | `A -> B -> C`    |
-		| Hierarchical     | Multiple classes inherit the same parent                                                                        | `A -> B, A -> C` |
-		| Multiple         | Java does not support multiple inheritance with classes (to avoid ambiguity). But it’s possible via interfaces. |                  |
+			class Bike extends Vehicle {
+			    void kickStart() {
+			        System.out.println("Bike started with a kick!");
+			    }
+			}
+
+			public class Main {
+			    public static void main(String[] args) {
+			        Car car = new Car();
+			        car.start();  // inherited
+			        car.honk();   // own method
+
+			        Bike bike = new Bike();
+			        bike.start();     // inherited
+			        bike.kickStart(); // own method
+			    }
+			}
 
 	=> Key Points
 
@@ -102,54 +124,6 @@ Inheritance
 		2. Difference between extends and implements
 			* extends → for class inheritance
 			* implements → for interface implementation
-
-	=> Inheritance Hierarchy Diagram
-
-		        ┌─────────────┐
-		        │   Vehicle   │   ← Superclass / Parent
-		        └─────┬───────┘
-		              │
-		   ┌──────────┴──────────┐
-		   │                     │
-		┌───────┐           ┌────────┐
-		│  Car  │           │  Bike  │  ← Subclasses / Child classes
-		└───────┘           └────────┘
-
-		Explanation:
-			- Both Car and Bike inherit the common properties and behavior from Vehicle.
-			- Each subclass can add or override functionality as needed.
-
-		Code Snippet Example:
-
-			class Vehicle {
-			    void start() {
-			        System.out.println("Vehicle is starting...");
-			    }
-			}
-
-			class Car extends Vehicle {
-			    void honk() {
-			        System.out.println("Car horn: Beep Beep!");
-			    }
-			}
-
-			class Bike extends Vehicle {
-			    void kickStart() {
-			        System.out.println("Bike started with a kick!");
-			    }
-			}
-
-			public class Main {
-			    public static void main(String[] args) {
-			        Car car = new Car();
-			        car.start();  // inherited
-			        car.honk();   // own method
-
-			        Bike bike = new Bike();
-			        bike.start();     // inherited
-			        bike.kickStart(); // own method
-			    }
-			}
 
 	=> Multiple Inheritance via Interfaces
 

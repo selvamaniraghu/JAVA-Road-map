@@ -36,7 +36,6 @@ Core Java Concepts
 	# Java Keyword
 	# Annotations
 	# transient
-	# Variables
 
 9. Java Problems
 
@@ -81,3 +80,19 @@ Core Java Concepts
 
 
 I’m looking for better career growth, challenging opportunities, and a chance to expand my skills.
+
+
+
+
+Infosis
+
+1. What is the different between stream and Collections
+2. what is the update in java 8 
+3. List<String> li = new ArrayList<>(); VS List<String> li = Arrays.asList();
+4. What is lazy loading?
+5. state handling in angular
+6. Spring profile
+7. Arraylist store area
+8. Multiple api call using Multithreading (Future API)
+9. Angular 6 to 15 version what are things needs to be check?
+10. What is store procedure

@@ -1,12 +1,5 @@
 JAVA PROBLEMS
 
-
-Sort array
-Find maximum/minimum
-Employee filtering
-Group employees by role
-Find highest salary by department
-
 Java 8 Stream problems
 
 	1. Reverse a String
@@ -143,7 +136,7 @@ Java 8 Stream problems
 			int secondLargest = Arrays.stream(arr)
 					.distinct()
 					.boxed()
-					.sorted(Comparator.reverseOrder())
+					.sorted(Comparator.reverseOrder()) // .Sorted (If second smallest)
 					.skip(1)
 					.findFirst()
 					.orElseThrow();
@@ -212,6 +205,10 @@ Java 8 Stream problems
 		int[] streamValue = list.stream().mapToInt(Integer::intValue).toArray();
 		
 		int[] streamMapValue = Arrays.stream(arr).distinct().toArray();
+
+		Remove duplicates and sort
+
+		int[] result = Arrays.stream(arr).distinct().sorted().toArray();
 
 		System.out.println("Remove duplicates: " + list);
 		System.out.println("Remove duplicates: " + linkedList);
@@ -457,7 +454,7 @@ Java 8 Stream problems
 			
 			System.out.print("Missing value is " + (expectValue - actualValue));
 
-	9. Sort Array
+	15. Sort Array
 
 		- Without Stream
 
@@ -492,21 +489,252 @@ Java 8 Stream problems
 
 			System.out.print("Sorted array " + Arrays.toString(arr));
 
-	3. Find Largest Element in Array
+	16. Find maximum/minimum
 
-		int[] arr = {10, 20, 5, 40};
+		- Without Stream
 
-		int max = arr[0];
+			int[] arr = { 5, 2, 9, 1 };
+			
+			int max = Integer.MIN_VALUE;
+			
+			for(int a : arr) {
+				if(a > max) {
+					max = a;
+				}
+			}
+			
+			System.out.println("Max value: " + max);
+			
+			int min = Integer.MAX_VALUE;
+			
+			for(int b : arr) {
+				if(b < min) {
+					min = b;
+				}
+			}
 
-		for(int num : arr){
-		    if(num > max){
-		        max = num;
-		    }
-		}
+			System.out.println("Min Value: " + min);
 
-		System.out.println(max);
+		- With Stream
 
-	4. Count Vowels in String
+			max = Arrays.stream(arr).max().orElseThrow();
+		
+			System.out.println("Max value: " + max);
+			
+			min = Arrays.stream(arr).min().orElseThrow();
+			
+			System.out.println("Min value: " + min);
+
+	17. Employee filtering
+
+		- Without Stream
+
+			Employee employee1 = new Employee(1, "Selvamani", "Developer", 58000, "Tech");
+			Employee employee2 = new Employee(2, "Vijay", "Worker", 50000, "Management");
+			Employee employee3 = new Employee(3, "Anitha", "Developer", 48000, "Tech");
+			Employee employee4 = new Employee(4, "Divya", "Developer", 88000, "Mach");
+			
+			List<Employee> list = new ArrayList<>();
+			
+			list.add(employee1);
+			list.add(employee2);
+			list.add(employee3);
+			list.add(employee4);
+			
+			List<Employee> result = new ArrayList<>();
+			
+			for(Employee e : list) {
+				if(e.getSalary() > 50000) {
+					result.add(e);
+				}
+			}
+			
+			System.out.println("List: " + result);
+
+		- With Stream
+
+			result = list.stream().filter(i -> i.getSalary() > 50000).collect(Collectors.toList());
+
+			System.out.println("List: " + result);
+
+	18. Group employees by role
+
+		- Without Stream
+
+			Map<String, List<Employee>> result = new HashMap<>();
+		
+			for(Employee e : list) {
+				result.computeIfAbsent(e.getRole(), k -> new ArrayList()).add(e);
+			}
+
+			System.out.println("List: " + result);
+
+		- With Stream
+
+			Map<String, List<Employee>> result = new HashMap<>();
+			
+			result = list.stream().collect(Collectors.groupingBy(Employee::getRole));
+			
+			System.out.println("List: " + result);
+
+	19. Find highest salary by department
+
+		- Without Stream
+
+			Map<String, Employee> map = new HashMap<>();
+		
+			for(Employee emp : list) {
+				String dept = emp.getDepartment();
+				
+				
+				if(!map.containsKey(dept) || emp.getSalary() > map.get(dept).getSalary()) {
+					map.put(dept, emp);
+				}			
+			}
+			
+			System.out.println("Highest salary by department: " + map);
+
+		- With Stream
+
+			Map<String, Employee> map = list.stream().collect(Collectors.groupingBy(Employee::getDepartment,
+			Collectors.collectingAndThen(Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary)), Optional::get)));
+		
+			System.out.println("Map: " + map);
+
+			Easy methods
+
+				Map<String, Employee> map = list.stream().collect(Collectors.toMap(Employee::getDepartment, emp -> emp,
+				(emp1, emp2) -> emp1.getSalary() > emp2.getSalary() ? emp1 : emp2));
+
+				System.out.println("Map: " + map);
+
+				Interview explanation: toMap() uses the department as the key. If two employees belong to the same department, the merge function keeps the employee with the higher salary.
+
+	20. Find even numbers
+
+		- Without Stream
+
+			int[] a = {1, 2, 2, 3, 4, 5, 6};
+			
+			List<Integer> result = new ArrayList<>();
+			
+			for(int num : a) {
+				if(num % 2 == 0) {
+					result.add(num);
+				}
+			}
+			
+			System.out.println("Add number : " + result);
+
+		- With Stream
+
+			int[] a = {1, 2, 2, 3, 4, 5, 6};
+		
+			List<Integer> result = Arrays.stream(a).filter(num -> num % 2 ==0).boxed().collect(Collectors.toList());
+		
+			System.out.println("result: " + result);
+
+	21. Find odd numbers
+
+		List<Integer> oddNumbers = Arrays.stream(arr).filter(num -> num % 2 != 0).boxed().collect(Collectors.toList());
+
+		System.out.println("oddNumbers: " + oddNumbers);
+
+	22. Sum of all numbers
+
+		- Without Stream
+
+			int[] a = {1, 2, 2, 3, 4, 5, 6};
+
+			int sum = 0;
+			
+			for(int n : a) {
+				sum += n;
+			}
+			
+			System.out.print("Sum: " + sum);
+
+		- With Stream
+			
+			sum = Arrays.stream(a).sum();
+			
+			System.out.print("Sum: " + sum);
+
+	23. Count numbers greater than 10
+
+		int[] a = {1, 2, 2, 3, 4, 5, 6, 12};
+
+		long count = Arrays.stream(a).filter(num -> num > 10).count();
+		
+		System.out.print("count: " + count);
+
+	24. Find first number greater than 10
+
+		int[] a = {1, 2, 2, 3, 4, 5, 6, 12};
+
+		int count = Arrays.stream(a).filter(num -> num > 10).findFirst().orElseThrow();
+		
+		System.out.print("count: " + count);
+
+	25. Sort ascending
+
+		int[] a = {1, 52, 22, 3, 4, 5, 6, 12};
+
+		int[] b = Arrays.stream(a).sorted().toArray();
+		
+		System.out.print("Ascending: " + Arrays.toString(b));
+
+	26. Sort descending
+
+		int[] a = {1, 52, 22, 3, 4, 5, 6, 12};
+		
+		List<Integer> c = Arrays.stream(a).boxed().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+		
+		System.out.print("descending: " + c);
+
+	27. Find average
+
+		int[] a = {1, 52, 22, 3, 4, 5, 6, 12};
+		
+		double c = Arrays.stream(a).average().orElse(0.0);
+		
+		System.out.print("avg: " + c);
+
+	28. Convert array to List
+
+		int[] a = {1, 52, 22, 3, 4, 5, 6, 12};
+		
+		List<Integer> c = Arrays.stream(a).boxed().collect(Collectors.toList());
+		
+		System.out.print("avg: " + c);
+
+	29. Convert List to Map
+
+		Map<Integer, String> map = list.stream().collect(Collectors.toMap(Employee::getId, Employee::getName));
+		
+		System.out.println("List to map: " + map);	
+
+	30. Count employees by role
+
+		Map<String, Long> map = list.stream().collect(Collectors.groupingBy(Employee::getRole, Collectors.counting()));
+		
+		System.out.println("Count employees by role: " + map);
+
+	31. Find highest salary
+
+		Employee e = list.stream().max(Comparator.comparingDouble(Employee::getSalary)).orElseThrow();
+		
+		System.out.println("Find highest salary: " + e);
+
+	32. Find employees with highest salary
+
+		double max = list.stream().mapToDouble(Employee::getSalary).max().orElseThrow();
+		
+		List<Employee> emp = list.stream().filter(i -> i.getSalary() == max).collect(Collectors.toList());
+		
+		System.out.println("Find employees with highest salary: " + emp);
+
+	34. Count Vowels in String
 
 		String str = "Hello";
 
@@ -520,24 +748,24 @@ Java 8 Stream problems
 
 		System.out.println(count);
 
-	12. Two Sum Problem (Very Important ⭐)
+	35. Two Sum Problem (Very Important ⭐)
 
 		int[] arr = {2,7,11,15};
 		int target = 9;
 
 		Map<Integer,Integer> map = new HashMap<>();
 
-		for(int i=0;i<arr.length;i++){
+		for(int i=0;i<arr.length;i++) {
 		    int diff = target - arr[i];
 
-		    if(map.containsKey(diff)){
+		    if(map.containsKey(diff)) {
 		        System.out.println(diff + " " + arr[i]);
 		    }
 
 		    map.put(arr[i], i);
 		}
 
-	15. String Compression
+	36. String Compression
 
 		String str = "aaabbc";
 		String result = "";
@@ -555,3 +783,121 @@ Java 8 Stream problems
 		result += str.charAt(str.length()-1) + "" + count;
 
 		System.out.println(result);
+
+	37. Filter last 5 employee using salary
+
+		List<Employee> a = list.stream().sorted(
+				Comparator.comparingDouble(Employee::getSalary).reversed()).limit(2).collect(Collectors.toList());
+
+		--------------------------------------------------------------------------------------------------------------
+		List<Transaction> result = new ArrayList<>(list1);
+
+		result.sort(Comparator.comparingDouble(
+		        Transaction::getAmount
+		).reversed());
+
+		if (result.size() > 5) {
+		    result = new ArrayList<>(result.subList(0, 5));
+		}
+
+	38. Difference between map() and flatMap()
+
+		- map() is used to transform each element into another element.
+
+		List<String> names = Arrays.asList("John", "Ravi", "Kumar");
+
+		List<Integer> lengths = names.stream()
+		        .map(String::length)
+		        .collect(Collectors.toList());
+
+		System.out.println(lengths);
+
+		-------------------------------------------------------------
+
+		- flatMap() is used when each element produces multiple elements, and we want to flatten them into a single stream.
+
+		List<List<Integer>> numbers = Arrays.asList(
+	        Arrays.asList(1, 2),
+	        Arrays.asList(3, 4),
+	        Arrays.asList(5, 6)
+		);
+
+		List<Integer> result = numbers.stream()
+		        .flatMap(List::stream)
+		        .collect(Collectors.toList());
+
+		System.out.println(result);
+
+	39. Difference between filter() and map()
+
+		- filter() Used to select elements based on a condition.
+		- map() Used to transform elements.
+
+	40. Difference between findFirst() and findAny()
+
+		- findFirst() Returns the first element according to encounter order.
+
+			Optional<Integer> result = Stream.of(10, 20, 30, 40).findFirst();
+
+			System.out.println(result.get()); // 10
+
+		- findAny() Returns any element.
+
+			Optional<Integer> result = Stream.of(10, 20, 30, 40).findFirst();
+
+			System.out.println(result.get()); // 10
+
+			Sequentially, it will often return 10, but you should not rely on that, particularly with parallel streams.
+
+			Optional<Integer> result = Stream.of(10, 20, 30, 40).parallel().findAny(); // 20
+
+			It can return any element.
+	
+	41. Difference between reduce() and collect()
+
+		- reduce() Used to combine multiple elements into one result.
+
+			int sum = Arrays.asList(10, 20, 30, 40).stream().reduce(0, (a, b) -> a + b);
+
+			System.out.println(sum); // 100
+
+			Optional<Integer> max = Arrays.asList(10, 50, 30).stream().reduce(Integer::max);
+
+			reduce → many values → one value
+
+		- collect() Used to accumulate stream elements into a collection or other mutable result container.
+
+			List<Integer> result = Arrays.asList(10, 20, 30).stream().collect(Collectors.toList());  // [10, 20, 30]
+
+			Map<String, List<Employee>> result = employees.stream().collect(Collectors.groupingBy(Employee::getRole));  
+
+Important Stream Methods to Remember
+
+	Method	 Meaning
+
+1. filter() - Select matching elements
+2. map() - Transform elements
+3. mapToInt() - Convert to primitive int stream
+4. mapToDouble() - Convert to primitive double stream
+5. sorted() - Sort elements
+6. distinct() - Remove duplicates
+7. limit() - Take first N elements
+8. skip() - Skip first N elements
+9. findFirst() - Get first element
+10. findAny() - Get any element
+11. count() - Count elements
+12. sum() - Sum primitive numbers
+13. average() - Calculate average
+14. max() - Find maximum
+15. min() - Find minimum
+16. reduce() - Combine elements into one result
+17. collect() - Collect results
+18. groupingBy() - Group elements
+19. toMap() - Convert to Map
+20. forEach() - Perform action for each element
+21. anyMatch() - At least one matches
+22. allMatch() - All match
+23. noneMatch() - None match
+
+
+

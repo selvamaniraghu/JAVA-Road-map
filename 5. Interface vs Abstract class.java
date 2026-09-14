@@ -8,18 +8,6 @@ Interface vs Abstract class
 
 	In practice, we use abstract classes for base implementations and interfaces for defining behavior across unrelated classes.”
 
-	=> Key Differences: Abstract Class vs Interface
-
-		| Feature     		| Abstract Class                            | Interface                                        |
-		| ----------------- | ----------------------------------------- | ------------------------------------------------ |
-		| Keyword     		| `abstract class`                          | `interface`                                      |
-		| Methods     		| Can have both abstract & concrete methods | Abstract by default (default/static from Java 8) |
-		| Variables   		| Can have instance variables               | Variables are `public static final` by default   |
-		| Inheritance 		| Supports single inheritance               | Supports multiple inheritance                    |
-		| Constructors		| Yes							            | No  							                   |
-		| Access Modifiers	| Any (private, protected, public)			| Methods are public by default					   |
-		| Use Case      	| Base class with shared code    			| Define contract for implementation			   |
-
 	=> Abstract Class Example
 
 		abstract class Vehicle {

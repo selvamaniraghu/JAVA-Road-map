@@ -124,3 +124,8 @@ Streams API
 		| Purpose         | Process data | Store data |
 		| Traversal       | One-time     | Multiple   |
 		| Lazy evaluation | Yes          | No         |
+
+
+1. stream() is a method present inside the Collection Interface. It is used to convert any collection into Stream.
+
+2. Collection is a parent Interface for various Data Structures.

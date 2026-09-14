@@ -87,7 +87,7 @@ Datatype
 
 					List<int> list; ---> Not Allowed
 
-					 List<Integer> list = new ArrayList<>(); ---> Allowed
+					List<Integer> list = new ArrayList<>(); ---> Allowed
 
 			2. Utility Methods
 

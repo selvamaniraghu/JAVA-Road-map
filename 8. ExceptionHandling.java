@@ -1,9 +1,19 @@
 Exception Handling
 
 	* Exception handling in Java is a mechanism used to handle runtime errors so that the program continues execution normally. 
+		
 		It uses try, catch, finally, throw, and throws keywords to manage exceptions. 
-		Java exceptions are classified into checked exceptions, which are handled at compile time, and unchecked exceptions, which occur at runtime.
-
+		The try block contains code that may cause an exception, the catch block handles the exception, 
+		and the finally block executes regardless of whether an exception occurs. 
+		The throw keyword is used to manually throw an exception inside a method, 
+		while throws is used in the method signature to declare that a method may throw certain exceptions.	
+		
+		Java exceptions are classified into checked exceptions, and unchecked exceptions.
+		Checked exceptions are checked at compile time and must be handled using try-catch or throws. 
+		They usually represent external issues such as file or database errors. 
+		Unchecked exceptions occur at runtime due to programming mistakes like null pointer access or division by zero, 
+		and the compiler does not require them to be handled.
+		
 	Example Without Exception Handling: 
 
 		int a = 10;
@@ -87,15 +97,6 @@ Exception Handling
 			- Used in method signature
 			- Can declare multiple exceptions
 
-	=> throw vs throws (Comparison)
-
-		| Feature              | throw                    | throws            |
-		| -------------------- | ------------------------ | ----------------- |
-		| Purpose              | Manually throw exception | Declare exception |
-		| Used in              | Method body              | Method signature  |
-		| Number of exceptions | One                      | Multiple          |
-		| Followed by          | Exception object         | Exception class   |
-
 	=> Example Combining Both
 	
 		public void checkAge(int age) throws Exception {
@@ -106,14 +107,6 @@ Exception Handling
 
 		    System.out.println("Eligible");
 		}
-
-	=> throw vs Throws Short Notes:
-
-		In Java, try-catch-finally is used to handle exceptions. 
-		The try block contains code that may cause an exception, the catch block handles the exception, 
-		and the finally block executes regardless of whether an exception occurs. 
-		The throw keyword is used to manually throw an exception inside a method, 
-		while throws is used in the method signature to declare that a method may throw certain exceptions.	
 
 	=> Flow of Execution
 
@@ -197,14 +190,6 @@ Exception Handling
 		                 Unchecked
 
 		- All unchecked exceptions extend RuntimeException.
-
-
-	=> Checked & Unchecked Short Notes:
-
-		Checked exceptions are checked at compile time and must be handled using try-catch or throws. 
-		They usually represent external issues such as file or database errors. 
-		Unchecked exceptions occur at runtime due to programming mistakes like null pointer access or division by zero, 
-		and the compiler does not require them to be handled.
 
 	=> Multiple Catch Example	
 

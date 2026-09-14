@@ -44,14 +44,8 @@ Collections Framework
 
 		1. List Interface
 
-			* Stores ordered elements and allows duplicates.
-
-				Characteristics
-
-					- Maintains insertion order
-					- Allows duplicate elements
-					- Elements accessed using index
-
+			* Stores ordered elements and allows duplicates. Elements accessed using index
+			
 				Implementations
 
 					- ArrayList
@@ -116,16 +110,6 @@ Collections Framework
 						System.out.println(set);
 
 						Output: [10, 20]
-
-			=> HashSet vs TreeSet
-
-				| Feature        | HashSet         | TreeSet             |
-				| -------------- | --------------- | ------------------- |
-				| Order          | No order        | Sorted order        |
-				| Data structure | Hash table      | Red-Black Tree      |
-				| Performance    | Faster (O(1))   | Slower (O(log n))   |
-				| Null values    | Allows one null | Does not allow null |
-				| Use case       | Fast lookup     | Sorted data         |
 
 		3. Queue Interface
 
