@@ -33,22 +33,6 @@ Inheritance
 
 		Here, Child inherits all accessible members (fields, methods) from Parent.
 
-	=> Inheritance Hierarchy Diagram
-
-		        ┌─────────────┐
-		        │   Vehicle   │   ← Superclass / Parent
-		        └─────┬───────┘
-		              │
-		   ┌──────────┴──────────┐
-		   │                     │
-		┌───────┐           ┌────────┐
-		│  Car  │           │  Bike  │  ← Subclasses / Child classes
-		└───────┘           └────────┘
-
-		Explanation:
-			- Both Car and Bike inherit the common properties and behavior from Vehicle.
-			- Each subclass can add or override functionality as needed.
-
 		Single Inheritance / Multilevel Inheritance Code Snippet Example:
 
 			class Vehicle {
@@ -80,6 +64,10 @@ Inheritance
 			        bike.kickStart(); // own method
 			    }
 			}
+
+	Real-time Example:
+
+		For example, in a banking application, we can have a Loan parent class and HomeLoan and PersonalLoan child classes that inherit common loan properties and behavior.
 
 	=> Key Points
 

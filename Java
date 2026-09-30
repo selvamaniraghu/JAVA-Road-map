@@ -86,13 +86,310 @@ I’m looking for better career growth, challenging opportunities, and a chance 
 
 Infosis
 
-1. What is the different between stream and Collections
 2. what is the update in java 8 
+
+	Lambda Expressions - Write shorter code for functional interfaces. 
+	Stream API - Filter, sort, map, and process collections. 
+	Functional Interfaces - Interfaces with exactly one abstract method. 
+	Default Methods - Add methods with implementations inside interfaces. 
+	Method References - Refer to existing methods using `::`. 
+	Optional - Handle potentially missing values more safely. 
+
 3. List<String> li = new ArrayList<>(); VS List<String> li = Arrays.asList();
+
+	- Both create a List<String>, but the main difference is that ArrayList is resizable, whereas Arrays.asList() returns a fixed-size list.
+
 4. What is lazy loading?
+
+	- Lazy loading is a technique in Angular where a module or component is loaded only when the user navigates to the required route, 
+	instead of loading everything when the application starts.
+
 5. state handling in angular
+
+	- State management in Angular is the process of storing, updating, and sharing application data between components. 
+		We can manage state using services, RxJS, or Signals. For large applications, we can use libraries like NgRx
+
 6. Spring profile
-7. Arraylist store area
+	
+	- Spring Boot Profiles are used to manage environment-specific configurations. 
+	For example, we can use different database URLs, credentials, and logging settings for development and production. 
+	We can define these configurations in separate files and activate the required profile.
+
 8. Multiple api call using Multithreading (Future API)
+
+	- To call multiple APIs concurrently in Java, I can use ExecutorService and Future. I submit each API call as a separate task to a thread pool. 
+	The tasks execute concurrently, and each returns a Future object. I can use future.get() to retrieve the result when it is ready
+
 9. Angular 6 to 15 version what are things needs to be check?
-10. What is store procedure
+
+	- would first check the existing Angular, Node.js, TypeScript, and RxJS versions. 
+	Then I would upgrade Angular incrementally using the official update guide. 
+	At each version, I would resolve breaking changes, check third-party library compatibility, update Angular Material if required, and run the application and tests. 
+	Finally, I would verify routing, API integration, forms, dashboards, and the production build
+
+10. Difference between == and .equals()?
+		
+	== compares references when used with objects, whereas .equals() compares object content when the class implements it appropriately.
+
+
+
+Problems Notes
+
+length - IntStream.range
+Array of Object - Arrays.stream
+
+
+
+========================================================================================================================================================
+
+
+Good list of questions to prepare for the interview:
+
+Java Core:
+Difference between HashMap and ConcurrentHashMap?
+How do JVM, JRE, and JDK differ?
+Explain the String Pool.
+Difference between == and .equals()?
+Why is String immutable?
+Difference between ArrayList and LinkedList?
+What is the difference between Comparable and Comparator?
+Explain Java 8 Streams and Lambda expressions.
+What is the difference between volatile and synchronized?
+Explain garbage collection.
+
+Multithreading:
+Difference between Process and Thread?
+What is a deadlock? How do you identify it in production?
+What is ExecutorService?
+Difference between wait(), sleep(), and join()?
+What is a race condition?
+
+Spring Boot:
+Explain Dependency Injection.
+Constructor Injection vs Field Injection?
+What is the Spring Bean lifecycle?
+Difference between @Component, @Service, and @Repository?
+How does Spring Boot auto-configuration work?
+What is @Transactional?
+How do you handle exceptions globally?
+
+Microservices:
+Microservices vs Monolith?
+Service Discovery and API Gateway?
+Circuit Breaker pattern?
+How do microservices communicate?
+How do you secure microservices?
+
+Database & SQL:
+Difference between INNER JOIN and LEFT JOIN?
+What are indexes?
+Difference between COUNT(*), COUNT(1), and COUNT(column)?
+How would you optimize a slow query?
+Explain ACID properties.
+What is database normalization?
+
+REST & Security:
+Difference between PUT and PATCH?
+What is JWT?
+How do you implement authentication and authorization?
+What is CORS?
+Stateless vs Stateful authentication?
+
+Scenario-Based:
+Production latency increased from 100ms to 5s without a deployment. What will you check first?
+API works in staging but fails in production. How will you troubleshoot?
+A service receives 100K requests/sec. How would you scale it?
+How would you design a URL shortening service?
+
+Coding:
+Reverse a String without built-in methods.
+Find duplicate elements in an array.
+Check if a String is a palindrome.
+LRU Cache implementation.
+Producer-Consumer problem.
+Find the first non-repeating character.
+Detect a cycle in a linked list.
+Top K frequent elements.
+
+=======================================================================================================================================================================
+
+
+Company: Infosys
+Role: Java Backend Developer
+Experience Required: 5–8 Years
+Interview Mode: Virtual or Offline
+Interview Date: 18 September 2026
+
+🔹 JAVA
+
+• 01) How does HashMap work internally in Java 8+?
+• 02) When would you choose ConcurrentHashMap over synchronizedMap?
+• 03) How do Streams handle intermediate and terminal operations?
+• 04) Explain CompletableFuture chaining and exception handling.
+• 05) How do virtual threads differ from platform threads?
+• 06) How do JVM heap, stack and metaspace interact?
+• 07) Compare G1, ZGC and Parallel GC for backend workloads.
+• 08) When would you use Records and Sealed Classes?
+• 09) How does pattern matching improve modern Java code?
+
+🔹 SPRING + SPRING BOOT
+
+• 10) Explain Spring Bean lifecycle and scopes.
+• 11) How does Spring Boot auto-configuration work?
+• 12) Explain @Transactional propagation and isolation levels.
+• 13) Why can self-invocation bypass Spring AOP?
+• 14) How would you design global REST exception handling?
+• 15) How do Spring Boot 3 and Spring 6 differ from older versions?
+• 16) How would you secure REST APIs using Spring Security and JWT?
+• 17) How would you implement caching with Spring Cache?
+• 18) How would you expose application health and metrics?
+
+🔹 MICROSERVICES
+
+• 19) How would you design service-to-service communication?
+• 20) When would you choose Kafka over synchronous REST?
+• 21) How would you handle Kafka retries, ordering and idempotency?
+• 22) How would you implement resilience using timeouts, retries and circuit breakers?
+• 23) How would you trace a request across distributed services?
+• 24) How would you design an observable, highly available microservice?
+
+🔹 CODING QUESTIONS
+
+• 25) Find the first non-repeating character using Java Streams.
+• 26) Implement a thread-safe LRU cache with O(1) get and put.
+• 27) Merge overlapping intervals and return the consolidated ranges.
+
+🔹 OTHERS
+
+• 28) Write SQL to find the second-highest salary per department.
+• 29) How would you deploy a Spring Boot service using Docker and Kubernetes?
+• 30) Design a CI/CD pipeline with automated testing and rollback.
+• 31) How would you design cloud infrastructure using AWS, GCP or Azure?
+• 32) How would you approach security, caching and observability in system design?
+
+
+=======================================================================================================================================================================
+
+ ConcurrentHashMap Internal Working in Java – Simplified
+
+As Java developers, we frequently use ConcurrentHashMap for thread-safe operations. But have you ever wondered what makes it so much faster than Hashtable or synchronized HashMap?
+
+Here's a quick breakdown👇
+🔹 The Problem
+A normal HashMap is not thread-safe.
+Map<Integer, String> map = new HashMap<>();
+
+When multiple threads read or write simultaneously, it can lead to data inconsistency.
+
+🔹 How ConcurrentHashMap Solves It
+Instead of locking the entire map, ConcurrentHashMap uses a combination of:
+✅ CAS (Compare-And-Swap)
+✅ Fine-Grained Bucket Locking
+✅ Lock-Free Reads
+✅ Treeification for Heavy Collisions
+✅ Cooperative Resizing
+
+🔹 Lock-Free Reads
+map.get(key);
+Most get() operations do not require locking.
+Multiple threads can read simultaneously without blocking each other, resulting in excellent read performance.
+
+🔹 CAS for Fast Inserts
+If a bucket is empty, ConcurrentHashMap uses a CAS operation:
+Expected Value = null
+Actual Value = null
+→ Insert Success
+No lock is required.
+This significantly reduces contention under high concurrency.
+
+🔹 Fine-Grained Locking
+If a bucket already contains data:
+Bucket 1 → Locked
+Bucket 2 → Available
+Bucket 3 → Available
+Only the affected bucket is locked, not the entire map.
+This allows multiple threads to update different buckets simultaneously.
+
+🔹 Handling Hash Collisions
+Initially:
+A → B → C → D → E
+When a bucket becomes heavily populated (more than 8 nodes), it is converted into a Red-Black Tree.
+Benefits:
+Linked List : O(n)
+Red-Black Tree: O(log n)
+Faster lookups and updates under heavy load.
+
+🔹 Smart Resizing
+Unlike traditional collections, resizing is not handled by a single thread.
+Multiple threads can participate in moving buckets during expansion, improving performance during growth.
+
+🔹 Why It's So Powerful
+ConcurrentHashMap achieves thread safety without sacrificing performance by combining:
+✔ Lock-Free Reads
+✔ CAS Operations
+✔ Bucket-Level Locking
+✔ Treeification
+✔ Cooperative Resizing
+
+This is why it is one of the most widely used concurrent collections in modern Java applications.
+
+💡 Key Takeaway
+ConcurrentHashMap doesn't lock the entire table. It uses CAS for simple updates and locks only specific buckets when necessary, enabling high throughput and excellent scalability in multi-threaded applications.
+
+=======================================================================================================================================================================
+
+If you’re preparing for Java backend interviews, don’t skip these Spring topics.
+
+🟢 𝗕𝗔𝗦𝗜𝗖
+Spring Core
+What is Spring Framework and why is it used?
+IoC vs DI
+Constructor vs Setter Injection
+Spring Beans & Bean lifecycle
+Bean scopes
+@Component vs @Service vs @Repository vs @Controller
+Autowiring
+@Qualifier and when to use it
+@Primary and how it resolves bean conflicts
+@Lazy and lazy initialization
+ApplicationContext vs BeanFactory
+@Configuration and @Bean
+What Spring Boot solves
+Starter dependencies
+Auto-configuration
+application.properties vs application.yml
+@SpringBootApplication
+
+🟡 𝗜𝗡𝗧𝗘𝗥𝗠𝗘𝗗𝗜𝗔𝗧𝗘
+REST APIs
+@RestController vs @Controller
+ResponseEntity
+Exception handling using @ControllerAdvice
+Validation with @Valid
+RequestParam, PathVariable, RequestBody
+What Spring Data JPA provides
+CrudRepository vs JpaRepository
+Lazy vs Eager loading
+JPA entity lifecycle
+N+1 select problem
+Entity relationships
+save() vs saveAndFlush()
+
+🔥 𝗧𝗥𝗔𝗡𝗦𝗔𝗖𝗧𝗜𝗢𝗡𝗦 (@𝗧𝗿𝗮𝗻𝘀𝗮𝗰𝘁𝗶𝗼𝗻𝗮𝗹)
+Why transactions are needed
+What @Transactional actually does
+Checked vs unchecked exceptions
+Rollback & no-rollback rules
+Propagation levels
+Isolation levels
+Common pitfalls (private methods, self-invocation, async, constructors)
+
+🔴 𝗔𝗗𝗩𝗔𝗡𝗖𝗘𝗗
+How auto-configuration works internally
+Conditional annotations
+Spring Boot Actuator
+Deadlock in Java & how it can appear in Spring apps
+Spring Cloud essentials (Eureka, Feign, Config, Gateway)
+Circuit breakers with Resilience4j / Hystrix
+
+=======================================================================================================================================================================

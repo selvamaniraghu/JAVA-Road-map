@@ -15,8 +15,8 @@ Streams API
 
 			List<Integer> list = Arrays.asList(1,2,3,4,5);
 
-			for(int num : list){
-			    if(num % 2 == 0){
+			for(int num : list) {
+			    if(num % 2 == 0) {
 			        System.out.println(num);
 			    }
 			}

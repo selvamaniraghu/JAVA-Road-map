@@ -4,9 +4,11 @@ Abstraction
 		It is achieved using abstract classes and interfaces.
 		Abstract classes can have both abstract and concrete methods, while interfaces define only the contract.
 		Abstraction helps reduce complexity, improve maintainability, and promote a cleaner design.
-		For example, a car class hides how the engine works — we just call start().”
 	
 	- In simple terms: We focus on what an object does, not how it does it.
+
+		For example, when a user makes a payment through a PaymentService, they only call makePayment(). 
+		They don't need to know the internal implementation of the bank, UPI, or card payment process.
 
 	=> Abstract Class Example
 

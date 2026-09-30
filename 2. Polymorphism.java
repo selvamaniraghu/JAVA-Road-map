@@ -5,6 +5,8 @@ Polymorphism
 		In runtime polymorphism, a parent reference can refer to a child object, and the overridden method of the child class is executed, determined at runtime.
 		This makes the code more flexible, reusable, and easier to maintain. It helps achieve dynamic behavior.
 
+		For real-time example, a calculateInterest() method can behave differently for HomeLoan, PersonalLoan, and BusinessLoan.
+
 	1. Compile-time Polymorphism
 
 		- Method Overloading: Same method name, different parameter list

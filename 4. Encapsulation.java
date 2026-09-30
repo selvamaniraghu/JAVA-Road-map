@@ -4,6 +4,8 @@ Encapsulation
 	This ensures controlled access, data security, and allows validation before modifying values. 
 	It helps make the code modular and maintainable. 
 
+	For example, in a Bank Account class, the account balance can be private, and we can provide methods like deposit() and withdraw() to modify it safely.
+
 	=> Code Example
 
 		class BankAccount {

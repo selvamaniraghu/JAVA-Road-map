@@ -8,23 +8,15 @@ Java 8 Stream problems
 
 			String str = "Tony";
 			String reversed = "";
+			StringBuilder result = new StringBuilder(); // With build-in methods
 
 			for(int i = str.length() - 1; i >= 0; i--) {
 			    reversed += str.charAt(i);
+			    result.append(str.charAt(i)); // With build-in methods
 			}
 
 			System.out.println(reversed);
-
-		- With build-in methods
-
-			String str = "Tony";
-			StringBuilder result = new StringBuilder();
-
-		    for (int i = str.length() - 1; i >= 0; i--) {
-		        result.append(str.charAt(i));
-		    }
-
-		    return result.toString();
+			System.out.println(result);
 
 		- Using Stream
 
@@ -135,8 +127,8 @@ Java 8 Stream problems
 		
 			int secondLargest = Arrays.stream(arr)
 					.distinct()
-					.boxed()
-					.sorted(Comparator.reverseOrder()) // .Sorted (If second smallest)
+					.boxed() // IntStream → Stream<Integer>
+					.sorted(Comparator.reverseOrder())
 					.skip(1)
 					.findFirst()
 					.orElseThrow();
@@ -247,14 +239,13 @@ Java 8 Stream problems
 
 	8. Find Frequency of Characters
 
-
 		- Without Stream
 
 			String str = "programming";
 
 			Map<Character, Integer> map = new HashMap<>();
 
-			for(char c : str.toCharArray()){
+			for(char c : str.toCharArray()) {
 			    map.put(c, map.getOrDefault(c, 0) + 1);
 			}
 
@@ -264,13 +255,7 @@ Java 8 Stream problems
 
 			String str = "Programming";
 		
-			Map<Character, Long> map = str.chars()
-					.mapToObj(c -> (char) c)
-					.collect(Collectors.groupingBy(
-							Function.identity(),
-							LinkedHashMap::new,
-							Collectors.counting()
-							));
+			Map<Character, Long> map = str.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()));
 			
 			System.out.println("Frequency of character: " + map);
 
@@ -372,7 +357,7 @@ Java 8 Stream problems
 			int num = 29;
 			boolean isPrime = true;
 
-			for(int i = 2; i <= num / 2; i++){
+			for(int i = 2; i <= num / 2; i++) {
 			    if(num % i == 0){
 			        isPrime = false;
 			        break;
@@ -630,7 +615,7 @@ Java 8 Stream problems
 
 			int[] a = {1, 2, 2, 3, 4, 5, 6};
 		
-			List<Integer> result = Arrays.stream(a).filter(num -> num % 2 ==0).boxed().collect(Collectors.toList());
+			List<Integer> result = Arrays.stream(a).filter(num -> num % 2 == 0).boxed().collect(Collectors.toList());
 		
 			System.out.println("result: " + result);
 
@@ -870,6 +855,105 @@ Java 8 Stream problems
 			List<Integer> result = Arrays.asList(10, 20, 30).stream().collect(Collectors.toList());  // [10, 20, 30]
 
 			Map<String, List<Employee>> result = employees.stream().collect(Collectors.groupingBy(Employee::getRole));  
+
+	42. Move all Zeros to End of Array
+
+		Without Stream
+		
+			int[] arr = {0, 1, 0, 3, 12};
+
+			int index = 0;
+
+		    for (int num : arr) {
+		        if (num != 0) {
+		            arr[index++] = num;
+		        }
+		    }
+
+		    while (index < arr.length) {
+		        arr[index++] = 0;
+		    }
+
+
+	    Stream
+
+	        int[] nonZero = Arrays.stream(arr)
+	        .filter(n -> n != 0)
+	        .toArray();
+
+		    int zeroCount = (int) Arrays.stream(arr)
+		            .filter(n -> n == 0)
+		            .count();
+
+		    int[] result = Arrays.copyOf(nonZero, arr.length);
+
+	43. Sort employees by salary
+
+		1. Without Stream
+
+			List<Employee> employees = new ArrayList<>();
+
+			employees.add(new Employee(101, "Tony", 50000));
+			employees.add(new Employee(102, "John", 70000));
+			employees.add(new Employee(103, "Raj", 40000));
+
+			Collections.sort(employees, new Comparator<Employee>() {
+			    @Override
+			    public int compare(Employee e1, Employee e2) {
+			        return Integer.compare(e1.getSalary(), e2.getSalary());
+			    }
+			});
+
+			Collections.sort(employees, new Comparator<Employee>() {
+			    @Override
+			    public int compare(Employee e1, Employee e2) {
+			        return Integer.compare(e2.getSalary(), e1.getSalary());
+			    }
+			});
+
+		2. With Stream
+
+			Ascending order:
+
+				List<Employee> sortedEmployees = employees.stream()
+			        .sorted(Comparator.comparing(Employee::getSalary))
+			        .collect(Collectors.toList());
+
+		    Descending order:
+
+		    	List<Employee> sortedEmployees = employees.stream()
+			        .sorted(Comparator.comparing(Employee::getSalary).reversed())
+			        .collect(Collectors.toList());
+
+	44. Reverse words in a sentence
+
+		Without Stream
+
+			String str = "Java is very powerful";
+
+			String[] words = str.split(" ");
+
+			StringBuilder result = new StringBuilder();
+
+			for (int i = words.length - 1; i >= 0; i--) {
+			    result.append(words[i]);
+
+			    if (i != 0) {
+			        result.append(" ");
+			    }
+			}
+
+			System.out.println(result);
+
+		With Stream
+
+			String str = "Java is very powerful";
+
+			String result = Arrays.stream(str.split(" "))
+			        .reduce((a, b) -> b + " " + a)
+			        .orElse("");
+
+			System.out.println(result);
 
 Important Stream Methods to Remember
 

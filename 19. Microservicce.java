@@ -2,8 +2,9 @@ Microservicce
 
 	=> What are Microservices?
 
-		- Microservices architecture is a design approach where an application is divided into small, independent services that communicate through APIs. 
-		Each service is responsible for a specific business function and can be developed, deployed, and scaled independently. 
+		Microservices architecture is an approach where a large application is divided into small, independent services, with each service responsible for a specific business functionality. 
+		These services communicate through APIs or messaging systems and can be independently developed, deployed, and scaled. 
+		For example, in a banking application, we can have separate User, Loan, Payment, and Notification services.
 		In Java, microservices are commonly built using Spring Boot and Spring Cloud.
 
 	=> Example: E-Commerce Application
@@ -77,29 +78,14 @@ Microservicce
 
 	=> Advantages of Microservices
 
-		✔ Independent deployment
-		✔ Easier scaling
-		✔ Faster development
-		✔ Fault isolation
-		✔ Technology flexibility
-
-		Example: You can scale Payment Service only if traffic increases.
-
-	=> Challenges of Microservices
-
-		❌ Complex architecture
-		❌ Network latency
-		❌ Difficult debugging
-		❌ Distributed data management
+		The main advantages of microservices are independent deployment, independent scaling, fault isolation, smaller codebases, and the ability for teams to work independently. 
+		The main disadvantages are increased architectural complexity, network communication, distributed transaction management, data consistency issues, 
+			monitoring and debugging challenges, and higher infrastructure requirements
 
 	=> Microservices vs Monolithic Architecture
 
-		| Feature      | Monolithic         | Microservices      |
-		| ------------ | ------------------ | ------------------ |
-		| Architecture | Single application | Multiple services  |
-		| Deployment   | Entire app         | Individual service |
-		| Scalability  | Limited            | Highly scalable    |
-		| Maintenance  | Difficult          | Easier             |
+		Monolithic = One application, one deployment
+		Microservices = Multiple services, independent deployment
 
 	=> Example Microservice in Spring Boot
 
